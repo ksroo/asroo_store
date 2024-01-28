@@ -38,6 +38,7 @@ flutter:
   assets:
     - .env.dev
     - .env.prod
+    - assets/images/core/
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
