@@ -15,11 +15,12 @@ void main() async {
   Platform.isAndroid
       ? await Firebase.initializeApp(
           options: const FirebaseOptions(
-          apiKey: 'AIzaSyDzDbL3x8u-tFcR-5E3UTK06ZNPlTaWWII',
-          appId: '1:123783791346:android:fd128a6da492bc142dc66b',
-          messagingSenderId: '123783791346',
-          projectId: 'asroostore',
-        ))
+            apiKey: 'AIzaSyDzDbL3x8u-tFcR-5E3UTK06ZNPlTaWWII',
+            appId: '1:123783791346:android:fd128a6da492bc142dc66b',
+            messagingSenderId: '123783791346',
+            projectId: 'asroostore',
+          ),
+        )
       : await Firebase.initializeApp();
 
   runApp(const AsrooStoreApp());
