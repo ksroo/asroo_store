@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/app/connectivity_controller.dart';
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/common/screens/no_network_screen.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:flutter/material.dart';
@@ -35,51 +36,8 @@ class AsrooStoreApp extends StatelessWidget {
                   ),
                 );
               },
-              home: Scaffold(
-                appBar: AppBar(
-                  title: const Text('Asroo Store'),
-                ),
-                body: const Center(
-                  child: Column(
-                    children: [
-                      // Old
-                      Text(
-                        'Old Font',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      Text(
-                        'وليد محمود',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                        ),
-                      ),
-                      // New
-
-                      Text(
-                        'Old Font',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: FontFamilyHelper.poppinsEnglish,
-                          fontWeight: FontWeightHelper.bold,
-                        ),
-                      ),
-
-                      Text(
-                        'وليد محمود',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontFamily: FontFamilyHelper.cairoArabic,
-                          fontWeight: FontWeightHelper.bold,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
+              onGenerateRoute: AppRoutes.onGenerateRoute,
+              initialRoute: AppRoutes.testOne,
             ),
           );
         } else {
