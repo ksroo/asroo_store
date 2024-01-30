@@ -9,6 +9,7 @@ class EnvVariable {
 
   String _envType = '';
 
+  /// Initializes environment variables based on the provided environment type.
   Future<void> init({required EnvTypeEnum envType}) async {
     switch (envType) {
       case EnvTypeEnum.dev:
@@ -18,8 +19,10 @@ class EnvVariable {
         await dotenv.load(fileName: '.env.prod');
     }
 
+    // Consider adding error handling if ENV_TYPE is not found
     _envType = dotenv.get('ENV_TYPE');
   }
 
+  /// Indicates if the current environment is for development.
   bool get debugMode => _envType == 'dev';
 }
