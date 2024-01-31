@@ -14,11 +14,15 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
   # Core
   connectivity_plus: ^5.0.2
   flutter_dotenv: ^5.1.0
   flutter_screenutil: ^5.9.0
   flutter_native_splash: ^2.3.10
+
+  #UI Animation
+  animate_do: ^3.3.2
 
 
   #Firebase

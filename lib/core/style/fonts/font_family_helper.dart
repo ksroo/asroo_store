@@ -5,5 +5,13 @@ class FontFamilyHelper {
 
   static const String poppinsEnglish = 'Poppins';
 
-  //TODO: switch  Arabic font and English Font
+  static String geLocalozedFontFamily() {
+    //TODO: SharedPreferences
+    final currentLanguage = 'ar';
+    if (currentLanguage == 'ar') {
+      return cairoArabic;
+    } else {
+      return poppinsEnglish;
+    }
+  }
 }
