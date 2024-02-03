@@ -24,6 +24,7 @@ dependencies:
 
   #UI Animation
   animate_do: ^3.3.2
+  fluttertoast: ^8.2.4
 
   #Bloc
   flutter_bloc: ^8.1.3

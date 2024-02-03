@@ -16,6 +16,9 @@ PODS:
   - Flutter (1.0.0)
   - flutter_native_splash (0.0.1):
     - Flutter
+  - fluttertoast (0.0.2):
+    - Flutter
+    - Toast
   - GoogleUtilities/Environment (7.12.0):
     - PromisesObjC (< 3.0, >= 1.2)
   - GoogleUtilities/Logger (7.12.0):
@@ -26,12 +29,14 @@ PODS:
   - shared_preferences_foundation (0.0.1):
     - Flutter
     - FlutterMacOS
+  - Toast (4.1.0)
 
 DEPENDENCIES:
   - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
   - firebase_core (from `.symlinks/plugins/firebase_core/ios`)
   - Flutter (from `Flutter`)
   - flutter_native_splash (from `.symlinks/plugins/flutter_native_splash/ios`)
+  - fluttertoast (from `.symlinks/plugins/fluttertoast/ios`)
   - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/darwin`)
 
 SPEC REPOS:
@@ -42,6 +47,7 @@ SPEC REPOS:
     - GoogleUtilities
     - PromisesObjC
     - ReachabilitySwift
+    - Toast
 
 EXTERNAL SOURCES:
   connectivity_plus:
@@ -52,6 +58,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   flutter_native_splash:
     :path: ".symlinks/plugins/flutter_native_splash/ios"
+  fluttertoast:
+    :path: ".symlinks/plugins/fluttertoast/ios"
   shared_preferences_foundation:
     :path: ".symlinks/plugins/shared_preferences_foundation/darwin"
 
@@ -63,10 +71,12 @@ SPEC CHECKSUMS:
   FirebaseCoreInternal: efeeb171ac02d623bdaefe121539939821e10811
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   flutter_native_splash: 52501b97d1c0a5f898d687f1646226c1f93c56ef
+  fluttertoast: 31b00dabfa7fb7bacd9e7dbee580d7a2ff4bf265
   GoogleUtilities: 0759d1a57ebb953965c2dfe0ba4c82e95ccc2e34
   PromisesObjC: c50d2056b5253dadbd6c2bea79b0674bd5a52fa4
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   shared_preferences_foundation: b4c3b4cddf1c21f02770737f147a3f5da9d39695
+  Toast: ec33c32b8688982cecc6348adeae667c1b9938da
 
 PODFILE CHECKSUM: d9bc17c32e61e14209add58dde9a097ae3259427
 
