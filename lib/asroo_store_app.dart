@@ -57,7 +57,13 @@ class AsrooStoreApp extends StatelessWidget {
                       );
                     },
                     onGenerateRoute: AppRoutes.onGenerateRoute,
-                    initialRoute: AppRoutes.login,
+                    initialRoute: SharedPref()
+                                .getString(PrefKeys.accessToken) !=
+                            null
+                        ? SharedPref().getString(PrefKeys.userRole) == 'admin'
+                            ? AppRoutes.homeCustomer
+                            : AppRoutes.homeAdmin
+                        : AppRoutes.login,
                   );
                 },
               ),
