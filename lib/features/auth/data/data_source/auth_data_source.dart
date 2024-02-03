@@ -3,6 +3,8 @@ import 'package:asroo_store/core/service/graphql/qraphql_queries/auth/auth_queri
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
 import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter/widgets.dart';
 
 class AuthDataSource {
   const AuthDataSource(this._graphql);
@@ -17,8 +19,12 @@ class AuthDataSource {
   }
 
   //UserRole
-  Future<UserRoleResponse> userRole() async {
-    final response = await _graphql.userRole();
+  Future<UserRoleResponse> userRole(String token) async {
+    final dio = Dio();
+    dio.options.headers['Authorization'] = 'Bearer $token';
+    final client = ApiService(dio);
+    final response = await client.userRole();
+    debugPrint('User Role => ${response.userRole}');
     return response;
   }
 }

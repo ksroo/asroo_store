@@ -21,13 +21,8 @@ class AuthRepos {
   }
 
   //Get User Role
-  Future<ApiResult<UserRoleResponse>> userRole() async {
-    try {
-      final response = await _dataSource.userRole();
-
-      return ApiResult.success(response);
-    } catch (error) {
-      return const ApiResult.failure(errorMessage);
-    }
+  Future<UserRoleResponse> userRole(String token) async {
+    final response = await _dataSource.userRole(token);
+    return response;
   }
 }
