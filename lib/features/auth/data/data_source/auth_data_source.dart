@@ -2,6 +2,7 @@ import 'package:asroo_store/core/service/graphql/api_service.dart';
 import 'package:asroo_store/core/service/graphql/qraphql_queries/auth/auth_queries.dart';
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
 import 'package:asroo_store/features/auth/data/models/login_response.dart';
+import 'package:asroo_store/features/auth/data/models/user_role_response.dart';
 
 class AuthDataSource {
   const AuthDataSource(this._graphql);
@@ -16,8 +17,8 @@ class AuthDataSource {
   }
 
   //UserRole
-  // Future<UserRoleResourse> userRole() async {
-  //   final response = await _graphql.userRole();
-  //   return response;
-  // }
+  Future<UserRoleResponse> userRole() async {
+    final response = await _graphql.userRole();
+    return response;
+  }
 }

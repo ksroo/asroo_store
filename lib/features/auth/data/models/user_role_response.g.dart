@@ -6,12 +6,12 @@ part of 'user_role_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UserRoleResourse _$UserRoleResourseFromJson(Map<String, dynamic> json) =>
-    UserRoleResourse(
+UserRoleResponse _$UserRoleResponseFromJson(Map<String, dynamic> json) =>
+    UserRoleResponse(
       json['role'] as String?,
     );
 
-Map<String, dynamic> _$UserRoleResourseToJson(UserRoleResourse instance) =>
+Map<String, dynamic> _$UserRoleResponseToJson(UserRoleResponse instance) =>
     <String, dynamic>{
       'role': instance.userRole,
     };
