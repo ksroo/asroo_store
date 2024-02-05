@@ -1,4 +1,5 @@
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
+import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
 
 class AuthQueries {
   factory AuthQueries() {
@@ -21,7 +22,34 @@ class AuthQueries {
       'variables': {
         'email': body.email,
         'password': body.password,
-      }
+      },
+    };
+  }
+
+  Map<String, dynamic> signUpMapQuery({required SignUpRequestBody body}) {
+    return {
+      'query': r'''
+              mutation SignUp($name: String!, $email: String! , $password: String!, $avatar: String!) {
+              addUser(
+                data: {
+                  name: $name
+                  email: $email
+                  password:$password
+                  avatar: $avatar
+                  role: customer
+                }
+              ) {
+                id
+                email
+              }
+            }
+        ''',
+      'variables': {
+        'name': body.name,
+        'email': body.email,
+        'password': body.password,
+        'avatar': body.avatar,
+      },
     };
   }
 }
