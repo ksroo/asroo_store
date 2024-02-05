@@ -4,6 +4,7 @@ import 'package:asroo_store/core/service/graphql/dio_factory.dart';
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
 final sl = GetIt.instance;
@@ -15,10 +16,12 @@ Future<void> setupInjector() async {
 
 Future<void> _initCore() async {
   final dio = DioFactory.getDio();
+  final navigatorKey = GlobalKey<NavigatorState>();
 
   sl
     ..registerFactory(AppCubit.new)
-    ..registerLazySingleton<ApiService>(() => ApiService(dio));
+    ..registerLazySingleton<ApiService>(() => ApiService(dio))
+    ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey);
 }
 
 Future<void> _initAuth() async {
