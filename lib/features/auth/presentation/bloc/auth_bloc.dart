@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
 import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/features/auth/data/models/login_request_body.dart';
+import 'package:asroo_store/features/auth/data/models/sign_up_request_body.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -14,12 +15,14 @@ part 'auth_bloc.freezed.dart';
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   AuthBloc(this._repo) : super(const _Initial()) {
     on<LoginEvent>(_login);
+    on<SignUpEvent>(_signUp);
   }
 
   final AuthRepos _repo;
 
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  TextEditingController nameController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
@@ -52,4 +55,28 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     );
   }
 
+  // signup and login to take user token
+  FutureOr<void> _signUp(
+    SignUpEvent event,
+    Emitter<AuthState> emit,
+  ) async {
+    emit(const AuthState.loading());
+    final result = await _repo.signUp(
+      SignUpRequestBody(
+        email: emailController.text.trim(),
+        password: passwordController.text,
+        avatar: event.imagUrl,
+        name: nameController.text.trim(),
+      ),
+    );
+
+    result.when(
+      success: (signupData) {
+        add(const AuthEvent.login());
+      },
+      failure: (error) {
+        emit(AuthState.error(error: error));
+      },
+    );
+  }
 }
