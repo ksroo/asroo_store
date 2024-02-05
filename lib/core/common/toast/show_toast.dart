@@ -6,7 +6,6 @@ class ShowToast {
   const ShowToast._();
 
   static void showToastErrorTop({
-    required BuildContext context,
     required String message,
     int? seconds,
   }) =>
@@ -21,7 +20,6 @@ class ShowToast {
       );
 
   static void showToastSuccessTop({
-    required BuildContext context,
     required String message,
     int? seconds,
   }) =>

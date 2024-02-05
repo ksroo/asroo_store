@@ -56,11 +56,12 @@ class AsrooStoreApp extends StatelessWidget {
                         ),
                       );
                     },
+                    navigatorKey: sl<GlobalKey<NavigatorState>>(),
                     onGenerateRoute: AppRoutes.onGenerateRoute,
                     initialRoute: SharedPref()
                                 .getString(PrefKeys.accessToken) !=
                             null
-                        ? SharedPref().getString(PrefKeys.userRole) == 'admin'
+                        ? SharedPref().getString(PrefKeys.userRole) != 'admin'
                             ? AppRoutes.homeCustomer
                             : AppRoutes.homeAdmin
                         : AppRoutes.login,
