@@ -18,13 +18,13 @@ class UsersNumberBloc extends Bloc<UsersNumberEvent, UsersNumberState> {
     GetUsersNumberEvent event,
     Emitter<UsersNumberState> emit,
   ) async {
-    final result = await _repo.numberOfProducts();
+    final result = await _repo.numberOfUsers();
 
     result.when(
-      success: (productsData) {
+      success: (userData) {
         emit(
           UsersNumberState.success(
-            numbers: productsData.produtcsNumbers,
+            numbers: userData.usersNumbers,
           ),
         );
       },

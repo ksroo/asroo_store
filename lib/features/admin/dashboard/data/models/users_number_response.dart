@@ -11,7 +11,7 @@ class UsersNumberResponse {
 
   final UsersNumberData data;
 
-  String get produtcsNumbers {
+  String get usersNumbers {
     if (data.usersList.isEmpty) {
       return '0';
     }
