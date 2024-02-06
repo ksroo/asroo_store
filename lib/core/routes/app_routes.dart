@@ -2,7 +2,7 @@ import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart'
 import 'package:asroo_store/core/common/screens/under_build_screen.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/routes/base_routes.dart';
-import 'package:asroo_store/features/admin/home_admin.dart';
+import 'package:asroo_store/features/admin/home_admin/presentation/screens/home_admin_screen.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart';
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';

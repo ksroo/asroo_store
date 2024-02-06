@@ -22,9 +22,10 @@ dependencies:
   flutter_native_splash: ^2.3.10
   get_it: ^7.6.7
 
-  #UI Animation
+  #UI
   animate_do: ^3.3.2
   fluttertoast: ^8.2.4
+  flutter_zoom_drawer: ^3.1.2
 
   #Bloc
   flutter_bloc: ^8.1.3
