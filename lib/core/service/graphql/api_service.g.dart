@@ -130,6 +130,92 @@ class _ApiService implements ApiService {
     return value;
   }
 
+  @override
+  Future<ProductsNumberResponse> numberOfProducts(
+      Map<String, dynamic> query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(query);
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<ProductsNumberResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/graphql',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = ProductsNumberResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<CategoriesNumberResponse> numberOfCategories(
+      Map<String, dynamic> query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(query);
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<CategoriesNumberResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/graphql',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = CategoriesNumberResponse.fromJson(_result.data!);
+    return value;
+  }
+
+  @override
+  Future<UsersNumberResponse> numberOfUsers(Map<String, dynamic> query) async {
+    const _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(query);
+    final _result = await _dio.fetch<Map<String, dynamic>>(
+        _setStreamType<UsersNumberResponse>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+            .compose(
+              _dio.options,
+              '/graphql',
+              queryParameters: queryParameters,
+              data: _data,
+            )
+            .copyWith(
+                baseUrl: _combineBaseUrls(
+              _dio.options.baseUrl,
+              baseUrl,
+            ))));
+    final value = UsersNumberResponse.fromJson(_result.data!);
+    return value;
+  }
+
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
     if (T != dynamic &&
         !(requestOptions.responseType == ResponseType.bytes ||
