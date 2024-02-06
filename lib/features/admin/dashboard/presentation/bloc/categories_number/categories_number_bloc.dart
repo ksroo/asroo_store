@@ -20,6 +20,7 @@ class CategoriesNumberBloc
     GetCategoriesNumberEvent event,
     Emitter<CategoriesNumberState> emit,
   ) async {
+    emit(const CategoriesNumberState.loading());
     final result = await _repo.numberOfCategories();
 
     result.when(
