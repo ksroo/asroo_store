@@ -19,38 +19,39 @@ mixin _$GetAllAdminCategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchCategories,
+    required TResult Function() fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchCategories,
+    TResult? Function()? fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchCategories,
+    TResult Function()? fetchAdminCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchCategoriesEvent value) fetchCategories,
+    required TResult Function(FetchAdminCategoriesEvent value)
+        fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult? Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -115,7 +116,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchCategories,
+    required TResult Function() fetchAdminCategories,
   }) {
     return started();
   }
@@ -124,7 +125,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchCategories,
+    TResult? Function()? fetchAdminCategories,
   }) {
     return started?.call();
   }
@@ -133,7 +134,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchCategories,
+    TResult Function()? fetchAdminCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -146,7 +147,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchCategoriesEvent value) fetchCategories,
+    required TResult Function(FetchAdminCategoriesEvent value)
+        fetchAdminCategories,
   }) {
     return started(this);
   }
@@ -155,7 +157,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult? Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
   }) {
     return started?.call(this);
   }
@@ -164,7 +166,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -179,37 +181,39 @@ abstract class _Started implements GetAllAdminCategoriesEvent {
 }
 
 /// @nodoc
-abstract class _$$FetchCategoriesEventImplCopyWith<$Res> {
-  factory _$$FetchCategoriesEventImplCopyWith(_$FetchCategoriesEventImpl value,
-          $Res Function(_$FetchCategoriesEventImpl) then) =
-      __$$FetchCategoriesEventImplCopyWithImpl<$Res>;
+abstract class _$$FetchAdminCategoriesEventImplCopyWith<$Res> {
+  factory _$$FetchAdminCategoriesEventImplCopyWith(
+          _$FetchAdminCategoriesEventImpl value,
+          $Res Function(_$FetchAdminCategoriesEventImpl) then) =
+      __$$FetchAdminCategoriesEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchCategoriesEventImplCopyWithImpl<$Res>
+class __$$FetchAdminCategoriesEventImplCopyWithImpl<$Res>
     extends _$GetAllAdminCategoriesEventCopyWithImpl<$Res,
-        _$FetchCategoriesEventImpl>
-    implements _$$FetchCategoriesEventImplCopyWith<$Res> {
-  __$$FetchCategoriesEventImplCopyWithImpl(_$FetchCategoriesEventImpl _value,
-      $Res Function(_$FetchCategoriesEventImpl) _then)
+        _$FetchAdminCategoriesEventImpl>
+    implements _$$FetchAdminCategoriesEventImplCopyWith<$Res> {
+  __$$FetchAdminCategoriesEventImplCopyWithImpl(
+      _$FetchAdminCategoriesEventImpl _value,
+      $Res Function(_$FetchAdminCategoriesEventImpl) _then)
       : super(_value, _then);
 }
 
 /// @nodoc
 
-class _$FetchCategoriesEventImpl implements FetchCategoriesEvent {
-  const _$FetchCategoriesEventImpl();
+class _$FetchAdminCategoriesEventImpl implements FetchAdminCategoriesEvent {
+  const _$FetchAdminCategoriesEventImpl();
 
   @override
   String toString() {
-    return 'GetAllAdminCategoriesEvent.fetchCategories()';
+    return 'GetAllAdminCategoriesEvent.fetchAdminCategories()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchCategoriesEventImpl);
+            other is _$FetchAdminCategoriesEventImpl);
   }
 
   @override
@@ -219,29 +223,29 @@ class _$FetchCategoriesEventImpl implements FetchCategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchCategories,
+    required TResult Function() fetchAdminCategories,
   }) {
-    return fetchCategories();
+    return fetchAdminCategories();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchCategories,
+    TResult? Function()? fetchAdminCategories,
   }) {
-    return fetchCategories?.call();
+    return fetchAdminCategories?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchCategories,
+    TResult Function()? fetchAdminCategories,
     required TResult orElse(),
   }) {
-    if (fetchCategories != null) {
-      return fetchCategories();
+    if (fetchAdminCategories != null) {
+      return fetchAdminCategories();
     }
     return orElse();
   }
@@ -250,36 +254,37 @@ class _$FetchCategoriesEventImpl implements FetchCategoriesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchCategoriesEvent value) fetchCategories,
+    required TResult Function(FetchAdminCategoriesEvent value)
+        fetchAdminCategories,
   }) {
-    return fetchCategories(this);
+    return fetchAdminCategories(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult? Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
   }) {
-    return fetchCategories?.call(this);
+    return fetchAdminCategories?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchCategoriesEvent value)? fetchCategories,
+    TResult Function(FetchAdminCategoriesEvent value)? fetchAdminCategories,
     required TResult orElse(),
   }) {
-    if (fetchCategories != null) {
-      return fetchCategories(this);
+    if (fetchAdminCategories != null) {
+      return fetchAdminCategories(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchCategoriesEvent implements GetAllAdminCategoriesEvent {
-  const factory FetchCategoriesEvent() = _$FetchCategoriesEventImpl;
+abstract class FetchAdminCategoriesEvent implements GetAllAdminCategoriesEvent {
+  const factory FetchAdminCategoriesEvent() = _$FetchAdminCategoriesEventImpl;
 }
 
 /// @nodoc

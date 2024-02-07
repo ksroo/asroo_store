@@ -11,7 +11,7 @@ class CategoriesGetAllResponse {
 
   final CategoriesGetAllData data;
 
-  List<CategoriesGetAllModel> get categoriesGetAlls {
+  List<CategoriesGetAllModel> get categoriesGetAllList {
     if (data.categoriesList.isEmpty) {
       return [];
     }
