@@ -4,6 +4,7 @@ import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/widgets/delete/delete_catgeory_widget.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
@@ -48,10 +49,8 @@ class AddCatgeoryItem extends StatelessWidget {
                 Row(
                   children: [
                     //Delete
-                    const Icon(
-                      Icons.delete,
-                      color: Colors.red,
-                      size: 25,
+                    DeleteCategoryWidget(
+                      categoryId: categoryId,
                     ),
                     SizedBox(width: 20.h),
                     //Update

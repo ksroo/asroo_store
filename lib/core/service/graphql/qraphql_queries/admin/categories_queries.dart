@@ -49,7 +49,7 @@ class CategoriesQueries {
     required String categoryId,
   }) {
     return {
-      'query': '''
+      'query': r'''
             mutation DeleteCategory($categoryId: ID!) {
               deleteCategory(id: $categoryId)
             }
