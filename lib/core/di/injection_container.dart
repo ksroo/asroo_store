@@ -4,6 +4,9 @@ import 'package:asroo_store/core/app/upload_image/data_source/upload_image_data_
 import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
 import 'package:asroo_store/core/service/graphql/api_service.dart';
 import 'package:asroo_store/core/service/graphql/dio_factory.dart';
+import 'package:asroo_store/features/admin/add_categories/data/data_source/categories_admin_data_source.dart';
+import 'package:asroo_store/features/admin/add_categories/data/repos/categoreis_admin_repos.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/data/data_soruce/dashboard_data_source.dart';
 import 'package:asroo_store/features/admin/dashboard/data/repos/dashboard_repo.dart';
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
@@ -21,6 +24,7 @@ Future<void> setupInjector() async {
   await _initCore();
   await _initAuth();
   await _initDashBoard();
+  await _initCategoriesAdmin();
 }
 
 Future<void> _initCore() async {
@@ -50,4 +54,11 @@ Future<void> _initDashBoard() async {
     ..registerFactory(() => ProductsNumberBloc(sl()))
     ..registerFactory(() => CategoriesNumberBloc(sl()))
     ..registerFactory(() => UsersNumberBloc(sl()));
+}
+
+Future<void> _initCategoriesAdmin() async {
+  sl
+    ..registerLazySingleton(() => CategoreisAdminRepo(sl()))
+    ..registerLazySingleton(() => CategoriesAdminDataSource(sl()))
+    ..registerFactory(() => GetAllAdminCategoriesBloc(sl()));
 }
