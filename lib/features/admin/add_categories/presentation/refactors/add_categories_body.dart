@@ -26,7 +26,10 @@ class AddCategoriesBody extends StatelessWidget {
               color: ColorsDark.blueLight,
               onRefresh: () async {
                 context.read<GetAllAdminCategoriesBloc>().add(
-                    const GetAllAdminCategoriesEvent.fetchAdminCategories());
+                      const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                        isNotLoading: true,
+                      ),
+                    );
               },
               child: CustomScrollView(
                 slivers: [

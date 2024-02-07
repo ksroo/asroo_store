@@ -19,19 +19,19 @@ mixin _$GetAllAdminCategoriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminCategories,
+    required TResult Function(bool isNotLoading) fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminCategories,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminCategories,
+    TResult Function(bool isNotLoading)? fetchAdminCategories,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -116,7 +116,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminCategories,
+    required TResult Function(bool isNotLoading) fetchAdminCategories,
   }) {
     return started();
   }
@@ -125,7 +125,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminCategories,
   }) {
     return started?.call();
   }
@@ -134,7 +134,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminCategories,
+    TResult Function(bool isNotLoading)? fetchAdminCategories,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -186,6 +186,8 @@ abstract class _$$FetchAdminCategoriesEventImplCopyWith<$Res> {
           _$FetchAdminCategoriesEventImpl value,
           $Res Function(_$FetchAdminCategoriesEventImpl) then) =
       __$$FetchAdminCategoriesEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({bool isNotLoading});
 }
 
 /// @nodoc
@@ -197,55 +199,80 @@ class __$$FetchAdminCategoriesEventImplCopyWithImpl<$Res>
       _$FetchAdminCategoriesEventImpl _value,
       $Res Function(_$FetchAdminCategoriesEventImpl) _then)
       : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? isNotLoading = null,
+  }) {
+    return _then(_$FetchAdminCategoriesEventImpl(
+      isNotLoading: null == isNotLoading
+          ? _value.isNotLoading
+          : isNotLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
+    ));
+  }
 }
 
 /// @nodoc
 
 class _$FetchAdminCategoriesEventImpl implements FetchAdminCategoriesEvent {
-  const _$FetchAdminCategoriesEventImpl();
+  const _$FetchAdminCategoriesEventImpl({required this.isNotLoading});
+
+  @override
+  final bool isNotLoading;
 
   @override
   String toString() {
-    return 'GetAllAdminCategoriesEvent.fetchAdminCategories()';
+    return 'GetAllAdminCategoriesEvent.fetchAdminCategories(isNotLoading: $isNotLoading)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAdminCategoriesEventImpl);
+            other is _$FetchAdminCategoriesEventImpl &&
+            (identical(other.isNotLoading, isNotLoading) ||
+                other.isNotLoading == isNotLoading));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode => Object.hash(runtimeType, isNotLoading);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$FetchAdminCategoriesEventImplCopyWith<_$FetchAdminCategoriesEventImpl>
+      get copyWith => __$$FetchAdminCategoriesEventImplCopyWithImpl<
+          _$FetchAdminCategoriesEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function() fetchAdminCategories,
+    required TResult Function(bool isNotLoading) fetchAdminCategories,
   }) {
-    return fetchAdminCategories();
+    return fetchAdminCategories(isNotLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function()? fetchAdminCategories,
+    TResult? Function(bool isNotLoading)? fetchAdminCategories,
   }) {
-    return fetchAdminCategories?.call();
+    return fetchAdminCategories?.call(isNotLoading);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function()? fetchAdminCategories,
+    TResult Function(bool isNotLoading)? fetchAdminCategories,
     required TResult orElse(),
   }) {
     if (fetchAdminCategories != null) {
-      return fetchAdminCategories();
+      return fetchAdminCategories(isNotLoading);
     }
     return orElse();
   }
@@ -284,7 +311,13 @@ class _$FetchAdminCategoriesEventImpl implements FetchAdminCategoriesEvent {
 }
 
 abstract class FetchAdminCategoriesEvent implements GetAllAdminCategoriesEvent {
-  const factory FetchAdminCategoriesEvent() = _$FetchAdminCategoriesEventImpl;
+  const factory FetchAdminCategoriesEvent({required final bool isNotLoading}) =
+      _$FetchAdminCategoriesEventImpl;
+
+  bool get isNotLoading;
+  @JsonKey(ignore: true)
+  _$$FetchAdminCategoriesEventImplCopyWith<_$FetchAdminCategoriesEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc

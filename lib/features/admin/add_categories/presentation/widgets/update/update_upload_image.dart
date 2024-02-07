@@ -20,6 +20,5 @@ class UpdateUploadImage extends StatelessWidget {
         ),
       ),
     );
-    ;
   }
 }

@@ -3,7 +3,6 @@ import 'package:asroo_store/core/common/widgets/custom_text_field.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
-import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_upload_image.dart';
 import 'package:flutter/material.dart';
@@ -11,8 +10,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UpdateCategoryBottomWidget extends StatefulWidget {
   const UpdateCategoryBottomWidget({super.key});
-
-  get imageUrl => null;
 
   @override
   State<UpdateCategoryBottomWidget> createState() =>
