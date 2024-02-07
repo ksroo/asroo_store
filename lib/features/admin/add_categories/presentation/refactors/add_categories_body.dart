@@ -1,7 +1,11 @@
+import 'package:asroo_store/core/common/loading/empty_screen.dart';
+import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/add_category_item.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/create/create_category.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddCategoriesBody extends StatelessWidget {
@@ -20,27 +24,59 @@ class AddCategoriesBody extends StatelessWidget {
           Expanded(
             child: RefreshIndicator(
               color: ColorsDark.blueLight,
-              onRefresh: () async {},
+              onRefresh: () async {
+                context.read<GetAllAdminCategoriesBloc>().add(
+                    const GetAllAdminCategoriesEvent.fetchAdminCategories());
+              },
               child: CustomScrollView(
                 slivers: [
                   SliverToBoxAdapter(
                     child: SizedBox(height: 20.h),
                   ),
                   SliverToBoxAdapter(
-                    child: ListView.separated(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      itemBuilder: (context, index) {
-                        return const AddCatgeoryItem(
-                          name: 'MacBook',
-                          categoryId: "1",
-                          image:
-                              'https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+                    child: BlocBuilder<GetAllAdminCategoriesBloc,
+                        GetAllAdminCategoriesState>(
+                      builder: (context, state) {
+                        return state.when(
+                          loading: () {
+                            return ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                return LoadingShimmer(
+                                  height: 130.h,
+                                  borderRadius: 15,
+                                );
+                              },
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 15.h),
+                              itemCount: 4,
+                            );
+                          },
+                          success: (list) {
+                            return ListView.separated(
+                              shrinkWrap: true,
+                              physics: const NeverScrollableScrollPhysics(),
+                              itemBuilder: (context, index) {
+                                return AddCatgeoryItem(
+                                  name: list.categoriesGetAllList[index].name ??
+                                      '',
+                                  categoryId:
+                                      list.categoriesGetAllList[index].id ?? '',
+                                  image:
+                                      list.categoriesGetAllList[index].image ??
+                                          '',
+                                );
+                              },
+                              separatorBuilder: (context, index) =>
+                                  SizedBox(height: 15.h),
+                              itemCount: list.categoriesGetAllList.length,
+                            );
+                          },
+                          empty: EmptyScreen.new,
+                          error: Text.new,
                         );
                       },
-                      separatorBuilder: (context, index) =>
-                          SizedBox(height: 15.h),
-                      itemCount: 10,
                     ),
                   ),
                 ],
