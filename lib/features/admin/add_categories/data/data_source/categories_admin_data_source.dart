@@ -24,4 +24,12 @@ class CategoriesAdminDataSource {
         .createCategory(CategoriesQueries().createMapQuery(body: body));
     return response;
   }
+
+//Delete category
+  Future<void> deleteCategory(String categoryId) async {
+    final response = await _graphql.deleteCategory(
+      CategoriesQueries().deleteMapQuery(categoryId: categoryId),
+    );
+    return response;
+  }
 }

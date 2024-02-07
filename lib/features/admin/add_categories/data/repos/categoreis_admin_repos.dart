@@ -31,4 +31,16 @@ class CategoreisAdminRepo {
       return const ApiResult.failure(errorMessage);
     }
   }
+
+  // Create a new Category
+  Future<ApiResult<void>> deleteCategory({
+    required String categoryIds,
+  }) async {
+    try {
+      final response = await _dataSource.deleteCategory(categoryIds);
+      return ApiResult.success(response);
+    } catch (e) {
+      return const ApiResult.failure(errorMessage);
+    }
+  }
 }
