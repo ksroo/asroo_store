@@ -1,9 +1,11 @@
+import 'package:asroo_store/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/widgets/create/create_category_bottom_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -25,7 +27,10 @@ class CreateCategory extends StatelessWidget {
         ),
         CustomButton(
           onPressed: () {
-            //TODO: create category bottom sheet
+            CustomBottomSheet.showModalBottomSheetContainer(
+              context: context,
+              widget: const CreateCategoryBottomSheetWidget(),
+            );
           },
           backgroundColor: ColorsDark.blueDark,
           lastRadius: 10,
