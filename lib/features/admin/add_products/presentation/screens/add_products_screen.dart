@@ -1,5 +1,6 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/refactors/add_products_body.dart';
 import 'package:flutter/material.dart';
 
 class AddProductsScreen extends StatelessWidget {
@@ -14,12 +15,7 @@ class AddProductsScreen extends StatelessWidget {
         isMain: true,
         backgroundColor: ColorsDark.mainColor,
       ),
-      body: Center(
-        child: Text(
-          'Products Screen',
-          style: TextStyle(color: Colors.white, fontSize: 20),
-        ),
-      ),
+      body: AddProductsBody(),
     );
   }
 }
