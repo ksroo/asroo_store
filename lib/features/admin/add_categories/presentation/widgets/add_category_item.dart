@@ -1,13 +1,17 @@
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:asroo_store/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/delete/delete_catgeory_widget.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_widget.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddCatgeoryItem extends StatelessWidget {
@@ -56,10 +60,7 @@ class AddCatgeoryItem extends StatelessWidget {
                     //Update
                     InkWell(
                       onTap: () {
-                        CustomBottomSheet.showModalBottomSheetContainer(
-                          context: context,
-                          widget: const UpdateCategoryBottomWidget(),
-                        );
+                        _updateCategoryBottomSheet(context);
                       },
                       child: const Icon(
                         Icons.edit,
@@ -87,6 +88,23 @@ class AddCatgeoryItem extends StatelessWidget {
             ),
           ],
         ),
+      ),
+    );
+  }
+
+  void _updateCategoryBottomSheet(BuildContext context) {
+    CustomBottomSheet.showModalBottomSheetContainer(
+      context: context,
+      widget: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => sl<UpdateCategoryBloc>(),
+          ),
+          BlocProvider(
+            create: (context) => sl<UploadImageCubit>(),
+          ),
+        ],
+        child: const UpdateCategoryBottomWidget(),
       ),
     );
   }

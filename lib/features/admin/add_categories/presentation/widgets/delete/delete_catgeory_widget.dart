@@ -60,7 +60,8 @@ class DeleteCategoryWidget extends StatelessWidget {
               onTap: () {
                 context.read<DeleteCategoryBloc>().add(
                       DeleteCategoryEvent.deleteCatgeory(
-                          categoryId: categoryId),
+                        categoryId: categoryId,
+                      ),
                     );
               },
               child: const Icon(
