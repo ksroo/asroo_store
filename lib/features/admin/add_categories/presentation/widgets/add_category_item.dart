@@ -6,6 +6,7 @@ import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/delete/delete_catgeory_widget.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/widgets/update/update_category_bottom_widget.dart';
@@ -104,8 +105,19 @@ class AddCatgeoryItem extends StatelessWidget {
             create: (context) => sl<UploadImageCubit>(),
           ),
         ],
-        child: const UpdateCategoryBottomWidget(),
+        child: UpdateCategoryBottomWidget(
+          categoryId: categoryId,
+          ctageoryName: name,
+          imageUrl: image,
+        ),
       ),
+      whenComplete: () {
+        context.read<GetAllAdminCategoriesBloc>().add(
+              const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                isNotLoading: false,
+              ),
+            );
+      },
     );
   }
 }
