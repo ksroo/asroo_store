@@ -1,4 +1,6 @@
 import 'package:asroo_store/core/app/upload_image/model/upload_image_response.dart';
+import 'package:asroo_store/features/admin/add_categories/data/models/create_category_response.dart';
+import 'package:asroo_store/features/admin/add_categories/data/models/get_all_categories_reponse.dart';
 import 'package:asroo_store/features/admin/dashboard/data/models/categories_number_response.dart';
 import 'package:asroo_store/features/admin/dashboard/data/models/porducts_number_response.dart';
 import 'package:asroo_store/features/admin/dashboard/data/models/users_number_response.dart';
@@ -44,8 +46,30 @@ abstract class ApiService {
   Future<CategoriesNumberResponse> numberOfCategories(
     @Body() Map<String, dynamic> query,
   );
+
   @POST(graphql)
   Future<UsersNumberResponse> numberOfUsers(
     @Body() Map<String, dynamic> query,
+  );
+
+  @POST(graphql)
+  Future<CategoriesGetAllResponse> getAllCategories(
+    @Body() Map<String, dynamic> query,
+  );
+
+  @POST(graphql)
+  Future<CreateCategoryResponse> createCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
+
+  @POST(graphql)
+  Future<void> deleteCategory(
+    @Body() Map<String, dynamic> mutation,
+  );
+
+  
+  @POST(graphql)
+  Future<void> updateCategory(
+    @Body() Map<String, dynamic> mutation,
   );
 }
