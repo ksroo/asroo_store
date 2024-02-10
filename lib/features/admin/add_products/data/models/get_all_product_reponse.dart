@@ -46,7 +46,7 @@ class ProductGetAllModel {
 
   final String? id;
   final String? title;
-  final int? price;
+  final double? price;
   final List<String>? images;
   final String? description;
   final CategoryProductModel? category;
