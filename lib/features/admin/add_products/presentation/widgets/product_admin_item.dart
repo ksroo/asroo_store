@@ -2,6 +2,7 @@ import 'package:asroo_store/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/extensions/string_exetension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_bottom_sheet.dart';
@@ -66,7 +67,7 @@ class ProductAdminItem extends StatelessWidget {
               child: CachedNetworkImage(
                 height: 200.h,
                 width: 120.w,
-                imageUrl: imageUrl,
+                imageUrl: imageUrl.imageProductFormate(),
                 errorWidget: (context, url, error) => const Icon(
                   Icons.error,
                   color: Colors.red,
