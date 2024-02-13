@@ -7,7 +7,9 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_prodcut_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/create/create_product_bottom_sheet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -41,9 +43,24 @@ class CreateProduct extends StatelessWidget {
                   BlocProvider(
                     create: (context) => sl<UploadImageCubit>(),
                   ),
+                  BlocProvider(
+                    create: (context) => sl<GetAllAdminCategoriesBloc>()
+                      ..add(
+                        const GetAllAdminCategoriesEvent.fetchAdminCategories(
+                          isNotLoading: false,
+                        ),
+                      ),
+                  ),
                 ],
                 child: const CreateProductBottomSheet(),
               ),
+              whenComplete: () {
+                context.read<GetAllAdminProductBloc>().add(
+                      const GetAllAdminProductEvent.getAllProducts(
+                        isNotLoading: false,
+                      ),
+                    );
+              },
             );
           },
           backgroundColor: ColorsDark.blueDark,
