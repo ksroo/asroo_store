@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:asroo_store/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
@@ -21,6 +22,7 @@ class ProductAdminItem extends StatelessWidget {
     required this.categoryName,
     required this.price,
     required this.productId,
+    required this.imageList,
     super.key,
   });
 
@@ -29,6 +31,7 @@ class ProductAdminItem extends StatelessWidget {
   final String categoryName;
   final String price;
   final String productId;
+  final List<String> imageList;
 
   @override
   Widget build(BuildContext context) {
@@ -56,8 +59,13 @@ class ProductAdminItem extends StatelessWidget {
                         BlocProvider(
                           create: (context) => sl<UpdateProductBloc>(),
                         ),
+                        BlocProvider(
+                          create: (context) => sl<UploadImageCubit>(),
+                        ),
                       ],
-                      child: const UpdateProductBottomSheet(),
+                      child: UpdateProductBottomSheet(
+                        imageList: imageList,
+                      ),
                     ),
                   );
                 },

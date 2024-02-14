@@ -11,7 +11,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class UpdateProductBottomSheet extends StatefulWidget {
-  const UpdateProductBottomSheet({super.key});
+  const UpdateProductBottomSheet({required this.imageList, super.key});
+
+  final List<String> imageList;
 
   @override
   State<UpdateProductBottomSheet> createState() =>
@@ -67,7 +69,9 @@ class _UpdateProductBottomSheetState extends State<UpdateProductBottomSheet> {
               ),
               SizedBox(height: 15.h),
               //Update Image Widget
-              const UpdateProductImages(),
+              UpdateProductImages(
+                imageList: widget.imageList,
+              ),
               SizedBox(height: 15.h),
               TextApp(
                 text: 'Title',
