@@ -1,4 +1,4 @@
-import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+
 import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_drop_down.dart';
@@ -9,7 +9,6 @@ import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
-import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_images.dart';
 import 'package:flutter/material.dart';
