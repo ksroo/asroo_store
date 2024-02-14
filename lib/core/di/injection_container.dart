@@ -17,10 +17,14 @@ import 'package:asroo_store/features/admin/add_products/presentation/bloc/delete
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/data/data_soruce/dashboard_data_source.dart';
+import 'package:asroo_store/features/admin/dashboard/data/models/users_number_response.dart';
 import 'package:asroo_store/features/admin/dashboard/data/repos/dashboard_repo.dart';
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/categories_number/categories_number_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/products_number/products_number_bloc.dart';
 import 'package:asroo_store/features/admin/dashboard/presentation/bloc/users_number/users_number_bloc.dart';
+import 'package:asroo_store/features/admin/users/data/data_sources/users_data_source.dart';
+import 'package:asroo_store/features/admin/users/data/repos/users_repo.dart';
+import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users/get_all_users_bloc.dart';
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
@@ -35,6 +39,7 @@ Future<void> setupInjector() async {
   await _initDashBoard();
   await _initCategoriesAdmin();
   await _initProductsAdmin();
+  await _initUsersAdmin();
 }
 
 Future<void> _initCore() async {
@@ -84,4 +89,11 @@ Future<void> _initProductsAdmin() async {
     ..registerFactory(() => CreateProdcutBloc(sl()))
     ..registerFactory(() => DeleteProductBloc(sl()))
     ..registerFactory(() => UpdateProductBloc(sl()));
+}
+
+Future<void> _initUsersAdmin() async {
+  sl
+    ..registerLazySingleton(() => UsersRepo(sl()))
+    ..registerLazySingleton(() => UserDataSource(sl()))
+    ..registerFactory(() => GetAllUsersBloc(sl()));
 }

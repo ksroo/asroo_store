@@ -3,12 +3,18 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/users/data/models/get_all_users_response.dart';
 import 'package:asroo_store/features/admin/users/presentation/widgets/table_cell_title_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TableForUsers extends StatelessWidget {
-  const TableForUsers({super.key});
+  const TableForUsers({
+    required this.userList,
+    super.key,
+  });
+
+  final List<UsersModel> userList;
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +59,7 @@ class TableForUsers extends StatelessWidget {
           ],
         ),
         ...List.generate(
-          4,
+          userList.length,
           (index) => TableRow(
             children: [
               TableCell(
@@ -61,7 +67,7 @@ class TableForUsers extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: TextApp(
-                    text: 'walid',
+                    text: userList[index].name ?? '',
                     theme: context.textStyle.copyWith(
                       fontSize: 12.sp,
                       fontWeight: FontWeightHelper.medium,
@@ -75,7 +81,7 @@ class TableForUsers extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(10),
                   child: TextApp(
-                    text: 'walidadmin@gmail.com',
+                    text: userList[index].email ?? '',
                     theme: context.textStyle.copyWith(
                       fontSize: 12.sp,
                       fontWeight: FontWeightHelper.medium,

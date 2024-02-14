@@ -10,6 +10,9 @@ class GetAllUsersResponse {
       _$GetAllUsersResponseFromJson(json);
 
   final UserData data;
+
+
+  
 }
 
 @JsonSerializable()
