@@ -7,6 +7,8 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_exetension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/get_all_admin_product/get_all_admin_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/delete/delete_product_widget.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_bottom_sheet.dart';
@@ -23,14 +25,18 @@ class ProductAdminItem extends StatelessWidget {
     required this.price,
     required this.productId,
     required this.imageList,
+    required this.description,
+    required this.categoryId,
     super.key,
   });
 
   final String imageUrl;
   final String title;
   final String categoryName;
+  final String description;
   final String price;
   final String productId;
+  final String categoryId;
   final List<String> imageList;
 
   @override
@@ -62,11 +68,32 @@ class ProductAdminItem extends StatelessWidget {
                         BlocProvider(
                           create: (context) => sl<UploadImageCubit>(),
                         ),
+                        BlocProvider(
+                          create: (context) => sl<GetAllAdminCategoriesBloc>()
+                            ..add(
+                              const GetAllAdminCategoriesEvent
+                                  .fetchAdminCategories(
+                                isNotLoading: false,
+                              ),
+                            ),
+                        ),
                       ],
                       child: UpdateProductBottomSheet(
                         imageList: imageList,
+                        categoryName: categoryName,
+                        description: description,
+                        price: price,
+                        productId: productId,
+                        title: title,
+                        categoryId: categoryId,
                       ),
                     ),
+                    whenComplete: () {
+                      context.read<GetAllAdminProductBloc>().add(
+                            const GetAllAdminProductEvent.getAllProducts(
+                                isNotLoading: false),
+                          );
+                    },
                   );
                 },
                 padding: EdgeInsets.zero,
