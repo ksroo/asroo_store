@@ -72,6 +72,5 @@ class CreateProduct extends StatelessWidget {
         ),
       ],
     );
-    ;
   }
 }

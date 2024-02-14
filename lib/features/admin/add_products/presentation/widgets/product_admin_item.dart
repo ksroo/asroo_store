@@ -1,14 +1,17 @@
 import 'package:asroo_store/core/common/bottom_shet/custom_bottom_sheet.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_exetension.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_products/presentation/bloc/update_product/update_product_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/delete/delete_product_widget.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/widgets/update/update_product_bottom_sheet.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductAdminItem extends StatelessWidget {
@@ -48,7 +51,14 @@ class ProductAdminItem extends StatelessWidget {
                 onPressed: () {
                   CustomBottomSheet.showModalBottomSheetContainer(
                     context: context,
-                    widget: const UpdateProductBottomSheet(),
+                    widget: MultiBlocProvider(
+                      providers: [
+                        BlocProvider(
+                          create: (context) => sl<UpdateProductBloc>(),
+                        ),
+                      ],
+                      child: const UpdateProductBottomSheet(),
+                    ),
                   );
                 },
                 padding: EdgeInsets.zero,

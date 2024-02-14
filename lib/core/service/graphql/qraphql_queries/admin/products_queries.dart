@@ -1,4 +1,5 @@
 import 'package:asroo_store/features/admin/add_products/data/models/create_product_request_body.dart';
+import 'package:asroo_store/features/admin/add_products/data/models/update_product_request_body.dart';
 
 class ProductsQueries {
   factory ProductsQueries() {
@@ -69,6 +70,36 @@ class ProductsQueries {
       ''',
       'variables': {
         'productId': productId,
+      },
+    };
+  }
+
+  //Update Product
+  Map<String, dynamic> updateProductMap({
+    required UpdateProductRequestBody body,
+  }) {
+    return {
+      'query': r'''
+            mutation UpdateProduct($productId: ID!, $title: String!,$description: String!,$imageList:[String!]!,$price: Float!,$categoryId: Float! ) {
+          updateProduct(id: $productId, 
+          changes: { 
+            title: $title,
+            categoryId: $categoryId,
+            images:$imageList,
+            description: $description,
+            price:$price
+            }) {
+            title
+          }
+        }
+        ''',
+      'variables': {
+        'productId': body.productId,
+        'title': body.title,
+        'description': body.description,
+        'imageList': body.imageList,
+        'categoryId': body.categoryId,
+        'price': body.price,
       },
     };
   }
