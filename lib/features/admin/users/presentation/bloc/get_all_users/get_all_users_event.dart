@@ -5,4 +5,6 @@ class GetAllUsersEvent with _$GetAllUsersEvent {
   const factory GetAllUsersEvent.started() = _Started;
   const factory GetAllUsersEvent.getAllUsers({required bool isNotLoading}) =
       FetchAllUsersEvent;
+  const factory GetAllUsersEvent.searchForUser(String? searchName) =
+      SearchForUserEvent;
 }
