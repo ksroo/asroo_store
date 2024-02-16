@@ -18,7 +18,11 @@ class AddNotificationsScreen extends StatelessWidget {
       body: Center(
         child: InkWell(
           onTap: () async {
-            await FirebaseCloudMessaging().sendTopicNotification();
+            await FirebaseCloudMessaging().sendTopicNotification(
+              title: 'test Topic title',
+              body: 'test Topic body',
+              productId: -1,
+            );
           },
           child: Text(
             'Notifications Screen',

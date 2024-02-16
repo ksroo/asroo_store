@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/service/push_notification/firebase_cloud_messaging.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
@@ -17,19 +18,33 @@ class HomeCustomerScreen extends StatelessWidget {
         ),
       ),
       body: Center(
-        child: TextButton(
-          onPressed: () async {
-            final token = await FirebaseMessaging.instance.getToken();
-
-            print(token);
-          },
-          child: const Text(
-            'Get Token',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () async {
+                await FirebaseCloudMessaging().subscribeNotification();
+              },
+              child: const Text(
+                'Subscribe',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
             ),
-          ),
+            TextButton(
+              onPressed: () async {
+                await FirebaseCloudMessaging().unSubscribeNotification();
+              },
+              child: const Text(
+                'UnSubscribe',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );

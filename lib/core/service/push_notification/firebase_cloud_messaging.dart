@@ -1,5 +1,6 @@
 import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:dio/dio.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class FirebaseCloudMessaging {
@@ -9,8 +10,28 @@ class FirebaseCloudMessaging {
 
   static final FirebaseCloudMessaging _instance = FirebaseCloudMessaging._();
 
+  static const String subscribeKey = 'asroo-store';
+
+  /// subscribe notification
+
+  Future<void> subscribeNotification() async {
+    await FirebaseMessaging.instance.subscribeToTopic(subscribeKey);
+    debugPrint('====🔔 Notification Subscribed 🔔=====');
+  }
+
+  /// unsubscribe notification
+
+  Future<void> unSubscribeNotification() async {
+    await FirebaseMessaging.instance.unsubscribeFromTopic(subscribeKey);
+    debugPrint('====🔕 Notification Unsubscribed 🔕=====');
+  }
+
 // send notifcation with api
-  Future<void> sendTopicNotification() async {
+  Future<void> sendTopicNotification({
+    required String title,
+    required String body,
+    required int productId,
+  }) async {
     try {
       final response = await Dio().post<dynamic>(
         EnvVariable.instance.notifcationBaseUrl,
@@ -24,12 +45,12 @@ class FirebaseCloudMessaging {
           },
         ),
         data: {
-          'to':
-              'dypyF6PXQzuNvL5TJXNjj8:APA91bHRH4zf_LAvBW74CXhFS_aarEKjWRdDUTpNyOxteZxHqtohbUVosTy6wItRONsAhgZ8XIQTkSbuMBnaYg2IA2q0FKohSlHteOh17WmBI_gNuIlYu8qyn2DF2f7jWypCoafTwLsu',
+          'to': '/topics/$subscribeKey',
           'notification': {
-            'title': 'Check this Mobile (title)',
-            'body': 'Rich Notification testing (body)',
+            'title': title,
+            'body': body,
           },
+          'data': {'productId': productId},
         },
       );
 
