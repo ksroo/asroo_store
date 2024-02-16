@@ -12,16 +12,60 @@ class FirebaseCloudMessaging {
 
   static const String subscribeKey = 'asroo-store';
 
+  final _firebaseMessaging = FirebaseMessaging.instance;
+
+  ValueNotifier<bool> isNotificationSubscribe = ValueNotifier(true);
+
+  bool isPermissionNotification = false;
+
+  Future<void> init() async {
+    //permission
+    await _permissionsNotification();
+  }
+
+  /// controller for the notification if user subscribe or unsubscribed
+  /// or accpeted the permission or not
+
+  Future<void> controllerForUserSubscribe() async {
+    if (isPermissionNotification == false) {
+      await _permissionsNotification();
+    } else {
+      if (isNotificationSubscribe.value == false) {
+        await _subscribeNotification();
+      } else {
+        await _unSubscribeNotification();
+      }
+    }
+  }
+
+  /// permissions to notifications
+  Future<void> _permissionsNotification() async {
+    final settings = await _firebaseMessaging.requestPermission(badge: false);
+
+    if (settings.authorizationStatus == AuthorizationStatus.authorized) {
+      /// subscribe to notifications topic
+      isPermissionNotification = true;
+      await _subscribeNotification();
+      debugPrint('🔔🔔 User accepted the notification permission');
+    } else {
+      isPermissionNotification = false;
+      isNotificationSubscribe.value = false;
+      debugPrint('🔕🔕 User not accepted the notification permission');
+    }
+  }
+
   /// subscribe notification
 
-  Future<void> subscribeNotification() async {
+  Future<void> _subscribeNotification() async {
+    isNotificationSubscribe.value = true;
     await FirebaseMessaging.instance.subscribeToTopic(subscribeKey);
     debugPrint('====🔔 Notification Subscribed 🔔=====');
   }
 
   /// unsubscribe notification
 
-  Future<void> unSubscribeNotification() async {
+  Future<void> _unSubscribeNotification() async {
+    isNotificationSubscribe.value = false;
     await FirebaseMessaging.instance.unsubscribeFromTopic(subscribeKey);
     debugPrint('====🔕 Notification Unsubscribed 🔕=====');
   }
