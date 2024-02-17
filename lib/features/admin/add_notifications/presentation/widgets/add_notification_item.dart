@@ -1,15 +1,22 @@
 import 'package:asroo_store/core/common/widgets/custom_container_linear_admin.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/extensions/date_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_notifications/data/models/add_notification_model.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/edit/edit_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddNotificationItem extends StatelessWidget {
-  const AddNotificationItem({super.key});
+  const AddNotificationItem({
+    required this.notificationModel,
+    super.key,
+  });
+
+  final AddNotificationModel notificationModel;
 
   @override
   Widget build(BuildContext context) {
@@ -24,18 +31,18 @@ class AddNotificationItem extends StatelessWidget {
             //Title
             NotificationInfo(
               title: 'Tilte: ',
-              body: 'wiweiiweiw',
+              body: notificationModel.title,
             ),
             const Spacer(),
             //Body
             NotificationInfo(
               title: 'Body: ',
-              body: 'body lasdlasldlas',
+              body: notificationModel.body,
             ),
             const Spacer(),
             NotificationInfo(
               title: 'Create At: ',
-              body: '17-2-2024',
+              body: notificationModel.createAt.getFormatDayMonthYear(),
             ),
             const Spacer(),
             Row(

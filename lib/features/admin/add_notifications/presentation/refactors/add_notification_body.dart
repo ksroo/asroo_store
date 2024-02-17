@@ -1,6 +1,9 @@
+import 'package:asroo_store/core/common/loading/empty_screen.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/bloc/get_all_notification_admin/get_all_notification_admin_bloc.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/add_notification_item.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/create/create_notification.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class AddNotificationBody extends StatelessWidget {
@@ -22,15 +25,35 @@ class AddNotificationBody extends StatelessWidget {
                   child: SizedBox(height: 20.h),
                 ),
                 SliverToBoxAdapter(
-                  child: ListView.separated(
-                    itemCount: 3,
-                    shrinkWrap: true,
-                    physics: const NeverScrollableScrollPhysics(),
-                    itemBuilder: (context, index) {
-                      return AddNotificationItem();
+                  child: BlocBuilder<GetAllNotificationAdminBloc,
+                      GetAllNotificationAdminState>(
+                    builder: (context, state) {
+                      return state.when(
+                        loading: () {
+                          return const Center(
+                            child: CircularProgressIndicator(
+                              color: Colors.white,
+                            ),
+                          );
+                        },
+                        success: (notificaionList) {
+                          return ListView.separated(
+                            itemCount: notificaionList.length,
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemBuilder: (context, index) {
+                              return AddNotificationItem(
+                                notificationModel: notificaionList[index],
+                              );
+                            },
+                            separatorBuilder: (context, index) =>
+                                SizedBox(height: 15.h),
+                          );
+                        },
+                        empty: EmptyScreen.new,
+                        error: Text.new,
+                      );
                     },
-                    separatorBuilder: (context, index) =>
-                        SizedBox(height: 15.h),
                   ),
                 ),
               ],
