@@ -4,6 +4,7 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/edit/edit_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -47,10 +48,7 @@ class AddNotificationItem extends StatelessWidget {
                 ),
                 SizedBox(width: 40.w),
                 //Edit notification
-                Icon(
-                  Icons.edit,
-                  color: Colors.yellow,
-                ),
+                EditNotification(),
                 SizedBox(width: 40.w),
                 //send notification
                 Icon(
