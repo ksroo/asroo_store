@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/common/widgets/admin_app_bar.dart';
 import 'package:asroo_store/core/service/push_notification/firebase_cloud_messaging.dart';
 import 'package:asroo_store/core/style/colors/colors_dark.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/refactors/add_notification_body.dart';
 import 'package:flutter/material.dart';
 
 class AddNotificationsScreen extends StatelessWidget {
@@ -8,28 +9,14 @@ class AddNotificationsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       backgroundColor: ColorsDark.mainColor,
       appBar: AdminAppBar(
         title: 'Notifications',
         isMain: true,
         backgroundColor: ColorsDark.mainColor,
       ),
-      body: Center(
-        child: InkWell(
-          onTap: () async {
-            await FirebaseCloudMessaging().sendTopicNotification(
-              title: 'test Topic title',
-              body: 'test Topic body',
-              productId: -1,
-            );
-          },
-          child: Text(
-            'Notifications Screen',
-            style: TextStyle(color: Colors.white, fontSize: 20),
-          ),
-        ),
-      ),
+      body: AddNotificationBody(),
     );
   }
 }
