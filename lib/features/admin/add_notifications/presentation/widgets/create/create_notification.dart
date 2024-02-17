@@ -41,9 +41,7 @@ class CreateNotification extends StatelessWidget {
               ),
               whenComplete: () {
                 context.read<GetAllNotificationAdminBloc>().add(
-                      const GetAllNotificationAdminEvent.getAllNotificion(
-                        isNotLoading: false,
-                      ),
+                      const GetAllNotificationAdminEvent.getAllNotificion(),
                     );
               },
             );

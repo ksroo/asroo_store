@@ -16,9 +16,7 @@ class AddNotificationsScreen extends StatelessWidget {
         BlocProvider(
           create: (context) => sl<GetAllNotificationAdminBloc>()
             ..add(
-              const GetAllNotificationAdminEvent.getAllNotificion(
-                isNotLoading: true,
-              ),
+              const GetAllNotificationAdminEvent.getAllNotificion(),
             ),
         ),
       ],

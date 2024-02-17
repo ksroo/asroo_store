@@ -56,6 +56,9 @@ class AddNotificationBody extends StatelessWidget {
                     },
                   ),
                 ),
+                SliverToBoxAdapter(
+                  child: SizedBox(height: 20.h),
+                ),
               ],
             ),
           ),
