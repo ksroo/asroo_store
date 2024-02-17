@@ -49,13 +49,15 @@ class AddNotificationItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 //delete notification
-                Icon(
+                const Icon(
                   Icons.delete,
                   color: Colors.red,
                 ),
                 SizedBox(width: 40.w),
                 //Edit notification
-                EditNotification(),
+                EditNotification(
+                  notificationModel: notificationModel,
+                ),
                 SizedBox(width: 40.w),
                 //send notification
                 Icon(
