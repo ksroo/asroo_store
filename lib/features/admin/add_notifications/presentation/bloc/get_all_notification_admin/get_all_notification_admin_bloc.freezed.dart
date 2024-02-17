@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'get_all_users_bloc.dart';
+part of 'get_all_notification_admin_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,64 +15,62 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$GetAllUsersEvent {
+mixin _$GetAllNotificationAdminEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isNotLoading) getAllUsers,
-    required TResult Function(String? searchName) searchForUser,
+    required TResult Function() getAllNotificion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool isNotLoading)? getAllUsers,
-    TResult? Function(String? searchName)? searchForUser,
+    TResult? Function()? getAllNotificion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isNotLoading)? getAllUsers,
-    TResult Function(String? searchName)? searchForUser,
+    TResult Function()? getAllNotificion,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchAllUsersEvent value) getAllUsers,
-    required TResult Function(SearchForUserEvent value) searchForUser,
+    required TResult Function(FetchAllNotificationAdminEvent value)
+        getAllNotificion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult? Function(SearchForUserEvent value)? searchForUser,
+    TResult? Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult Function(SearchForUserEvent value)? searchForUser,
+    TResult Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetAllUsersEventCopyWith<$Res> {
-  factory $GetAllUsersEventCopyWith(
-          GetAllUsersEvent value, $Res Function(GetAllUsersEvent) then) =
-      _$GetAllUsersEventCopyWithImpl<$Res, GetAllUsersEvent>;
+abstract class $GetAllNotificationAdminEventCopyWith<$Res> {
+  factory $GetAllNotificationAdminEventCopyWith(
+          GetAllNotificationAdminEvent value,
+          $Res Function(GetAllNotificationAdminEvent) then) =
+      _$GetAllNotificationAdminEventCopyWithImpl<$Res,
+          GetAllNotificationAdminEvent>;
 }
 
 /// @nodoc
-class _$GetAllUsersEventCopyWithImpl<$Res, $Val extends GetAllUsersEvent>
-    implements $GetAllUsersEventCopyWith<$Res> {
-  _$GetAllUsersEventCopyWithImpl(this._value, this._then);
+class _$GetAllNotificationAdminEventCopyWithImpl<$Res,
+        $Val extends GetAllNotificationAdminEvent>
+    implements $GetAllNotificationAdminEventCopyWith<$Res> {
+  _$GetAllNotificationAdminEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -89,7 +87,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$GetAllUsersEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$GetAllNotificationAdminEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -103,7 +101,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'GetAllUsersEvent.started()';
+    return 'GetAllNotificationAdminEvent.started()';
   }
 
   @override
@@ -119,8 +117,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isNotLoading) getAllUsers,
-    required TResult Function(String? searchName) searchForUser,
+    required TResult Function() getAllNotificion,
   }) {
     return started();
   }
@@ -129,8 +126,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool isNotLoading)? getAllUsers,
-    TResult? Function(String? searchName)? searchForUser,
+    TResult? Function()? getAllNotificion,
   }) {
     return started?.call();
   }
@@ -139,8 +135,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isNotLoading)? getAllUsers,
-    TResult Function(String? searchName)? searchForUser,
+    TResult Function()? getAllNotificion,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -153,8 +148,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchAllUsersEvent value) getAllUsers,
-    required TResult Function(SearchForUserEvent value) searchForUser,
+    required TResult Function(FetchAllNotificationAdminEvent value)
+        getAllNotificion,
   }) {
     return started(this);
   }
@@ -163,8 +158,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult? Function(SearchForUserEvent value)? searchForUser,
+    TResult? Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
   }) {
     return started?.call(this);
   }
@@ -173,8 +167,7 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult Function(SearchForUserEvent value)? searchForUser,
+    TResult Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -184,103 +177,77 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements GetAllUsersEvent {
+abstract class _Started implements GetAllNotificationAdminEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$FetchAllUsersEventImplCopyWith<$Res> {
-  factory _$$FetchAllUsersEventImplCopyWith(_$FetchAllUsersEventImpl value,
-          $Res Function(_$FetchAllUsersEventImpl) then) =
-      __$$FetchAllUsersEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({bool isNotLoading});
+abstract class _$$FetchAllNotificationAdminEventImplCopyWith<$Res> {
+  factory _$$FetchAllNotificationAdminEventImplCopyWith(
+          _$FetchAllNotificationAdminEventImpl value,
+          $Res Function(_$FetchAllNotificationAdminEventImpl) then) =
+      __$$FetchAllNotificationAdminEventImplCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$$FetchAllUsersEventImplCopyWithImpl<$Res>
-    extends _$GetAllUsersEventCopyWithImpl<$Res, _$FetchAllUsersEventImpl>
-    implements _$$FetchAllUsersEventImplCopyWith<$Res> {
-  __$$FetchAllUsersEventImplCopyWithImpl(_$FetchAllUsersEventImpl _value,
-      $Res Function(_$FetchAllUsersEventImpl) _then)
+class __$$FetchAllNotificationAdminEventImplCopyWithImpl<$Res>
+    extends _$GetAllNotificationAdminEventCopyWithImpl<$Res,
+        _$FetchAllNotificationAdminEventImpl>
+    implements _$$FetchAllNotificationAdminEventImplCopyWith<$Res> {
+  __$$FetchAllNotificationAdminEventImplCopyWithImpl(
+      _$FetchAllNotificationAdminEventImpl _value,
+      $Res Function(_$FetchAllNotificationAdminEventImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? isNotLoading = null,
-  }) {
-    return _then(_$FetchAllUsersEventImpl(
-      isNotLoading: null == isNotLoading
-          ? _value.isNotLoading
-          : isNotLoading // ignore: cast_nullable_to_non_nullable
-              as bool,
-    ));
-  }
 }
 
 /// @nodoc
 
-class _$FetchAllUsersEventImpl implements FetchAllUsersEvent {
-  const _$FetchAllUsersEventImpl({required this.isNotLoading});
-
-  @override
-  final bool isNotLoading;
+class _$FetchAllNotificationAdminEventImpl
+    implements FetchAllNotificationAdminEvent {
+  const _$FetchAllNotificationAdminEventImpl();
 
   @override
   String toString() {
-    return 'GetAllUsersEvent.getAllUsers(isNotLoading: $isNotLoading)';
+    return 'GetAllNotificationAdminEvent.getAllNotificion()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$FetchAllUsersEventImpl &&
-            (identical(other.isNotLoading, isNotLoading) ||
-                other.isNotLoading == isNotLoading));
+            other is _$FetchAllNotificationAdminEventImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, isNotLoading);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$FetchAllUsersEventImplCopyWith<_$FetchAllUsersEventImpl> get copyWith =>
-      __$$FetchAllUsersEventImplCopyWithImpl<_$FetchAllUsersEventImpl>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(bool isNotLoading) getAllUsers,
-    required TResult Function(String? searchName) searchForUser,
+    required TResult Function() getAllNotificion,
   }) {
-    return getAllUsers(isNotLoading);
+    return getAllNotificion();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(bool isNotLoading)? getAllUsers,
-    TResult? Function(String? searchName)? searchForUser,
+    TResult? Function()? getAllNotificion,
   }) {
-    return getAllUsers?.call(isNotLoading);
+    return getAllNotificion?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(bool isNotLoading)? getAllUsers,
-    TResult Function(String? searchName)? searchForUser,
+    TResult Function()? getAllNotificion,
     required TResult orElse(),
   }) {
-    if (getAllUsers != null) {
-      return getAllUsers(isNotLoading);
+    if (getAllNotificion != null) {
+      return getAllNotificion();
     }
     return orElse();
   }
@@ -289,216 +256,66 @@ class _$FetchAllUsersEventImpl implements FetchAllUsersEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(FetchAllUsersEvent value) getAllUsers,
-    required TResult Function(SearchForUserEvent value) searchForUser,
+    required TResult Function(FetchAllNotificationAdminEvent value)
+        getAllNotificion,
   }) {
-    return getAllUsers(this);
+    return getAllNotificion(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult? Function(SearchForUserEvent value)? searchForUser,
+    TResult? Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
   }) {
-    return getAllUsers?.call(this);
+    return getAllNotificion?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult Function(SearchForUserEvent value)? searchForUser,
+    TResult Function(FetchAllNotificationAdminEvent value)? getAllNotificion,
     required TResult orElse(),
   }) {
-    if (getAllUsers != null) {
-      return getAllUsers(this);
+    if (getAllNotificion != null) {
+      return getAllNotificion(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchAllUsersEvent implements GetAllUsersEvent {
-  const factory FetchAllUsersEvent({required final bool isNotLoading}) =
-      _$FetchAllUsersEventImpl;
-
-  bool get isNotLoading;
-  @JsonKey(ignore: true)
-  _$$FetchAllUsersEventImplCopyWith<_$FetchAllUsersEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class FetchAllNotificationAdminEvent
+    implements GetAllNotificationAdminEvent {
+  const factory FetchAllNotificationAdminEvent() =
+      _$FetchAllNotificationAdminEventImpl;
 }
 
 /// @nodoc
-abstract class _$$SearchForUserEventImplCopyWith<$Res> {
-  factory _$$SearchForUserEventImplCopyWith(_$SearchForUserEventImpl value,
-          $Res Function(_$SearchForUserEventImpl) then) =
-      __$$SearchForUserEventImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String? searchName});
-}
-
-/// @nodoc
-class __$$SearchForUserEventImplCopyWithImpl<$Res>
-    extends _$GetAllUsersEventCopyWithImpl<$Res, _$SearchForUserEventImpl>
-    implements _$$SearchForUserEventImplCopyWith<$Res> {
-  __$$SearchForUserEventImplCopyWithImpl(_$SearchForUserEventImpl _value,
-      $Res Function(_$SearchForUserEventImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? searchName = freezed,
-  }) {
-    return _then(_$SearchForUserEventImpl(
-      freezed == searchName
-          ? _value.searchName
-          : searchName // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SearchForUserEventImpl implements SearchForUserEvent {
-  const _$SearchForUserEventImpl(this.searchName);
-
-  @override
-  final String? searchName;
-
-  @override
-  String toString() {
-    return 'GetAllUsersEvent.searchForUser(searchName: $searchName)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SearchForUserEventImpl &&
-            (identical(other.searchName, searchName) ||
-                other.searchName == searchName));
-  }
-
-  @override
-  int get hashCode => Object.hash(runtimeType, searchName);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SearchForUserEventImplCopyWith<_$SearchForUserEventImpl> get copyWith =>
-      __$$SearchForUserEventImplCopyWithImpl<_$SearchForUserEventImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() started,
-    required TResult Function(bool isNotLoading) getAllUsers,
-    required TResult Function(String? searchName) searchForUser,
-  }) {
-    return searchForUser(searchName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? started,
-    TResult? Function(bool isNotLoading)? getAllUsers,
-    TResult? Function(String? searchName)? searchForUser,
-  }) {
-    return searchForUser?.call(searchName);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? started,
-    TResult Function(bool isNotLoading)? getAllUsers,
-    TResult Function(String? searchName)? searchForUser,
-    required TResult orElse(),
-  }) {
-    if (searchForUser != null) {
-      return searchForUser(searchName);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Started value) started,
-    required TResult Function(FetchAllUsersEvent value) getAllUsers,
-    required TResult Function(SearchForUserEvent value) searchForUser,
-  }) {
-    return searchForUser(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Started value)? started,
-    TResult? Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult? Function(SearchForUserEvent value)? searchForUser,
-  }) {
-    return searchForUser?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Started value)? started,
-    TResult Function(FetchAllUsersEvent value)? getAllUsers,
-    TResult Function(SearchForUserEvent value)? searchForUser,
-    required TResult orElse(),
-  }) {
-    if (searchForUser != null) {
-      return searchForUser(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SearchForUserEvent implements GetAllUsersEvent {
-  const factory SearchForUserEvent(final String? searchName) =
-      _$SearchForUserEventImpl;
-
-  String? get searchName;
-  @JsonKey(ignore: true)
-  _$$SearchForUserEventImplCopyWith<_$SearchForUserEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-mixin _$GetAllUsersState {
+mixin _$GetAllNotificationAdminState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
+    required TResult Function(List<AddNotificationModel> notificationList)
+        success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
+    TResult? Function(List<AddNotificationModel> notificationList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
+    TResult Function(List<AddNotificationModel> notificationList)? success,
     TResult Function()? empty,
     TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -508,7 +325,6 @@ mixin _$GetAllUsersState {
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -517,7 +333,6 @@ mixin _$GetAllUsersState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -526,23 +341,25 @@ mixin _$GetAllUsersState {
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $GetAllUsersStateCopyWith<$Res> {
-  factory $GetAllUsersStateCopyWith(
-          GetAllUsersState value, $Res Function(GetAllUsersState) then) =
-      _$GetAllUsersStateCopyWithImpl<$Res, GetAllUsersState>;
+abstract class $GetAllNotificationAdminStateCopyWith<$Res> {
+  factory $GetAllNotificationAdminStateCopyWith(
+          GetAllNotificationAdminState value,
+          $Res Function(GetAllNotificationAdminState) then) =
+      _$GetAllNotificationAdminStateCopyWithImpl<$Res,
+          GetAllNotificationAdminState>;
 }
 
 /// @nodoc
-class _$GetAllUsersStateCopyWithImpl<$Res, $Val extends GetAllUsersState>
-    implements $GetAllUsersStateCopyWith<$Res> {
-  _$GetAllUsersStateCopyWithImpl(this._value, this._then);
+class _$GetAllNotificationAdminStateCopyWithImpl<$Res,
+        $Val extends GetAllNotificationAdminState>
+    implements $GetAllNotificationAdminStateCopyWith<$Res> {
+  _$GetAllNotificationAdminStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -559,7 +376,7 @@ abstract class _$$LoadingStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$LoadingStateImplCopyWithImpl<$Res>
-    extends _$GetAllUsersStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    extends _$GetAllNotificationAdminStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
@@ -573,7 +390,7 @@ class _$LoadingStateImpl implements LoadingState {
 
   @override
   String toString() {
-    return 'GetAllUsersState.loading()';
+    return 'GetAllNotificationAdminState.loading()';
   }
 
   @override
@@ -589,10 +406,10 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
+    required TResult Function(List<AddNotificationModel> notificationList)
+        success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
   }) {
     return loading();
   }
@@ -601,10 +418,9 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
+    TResult? Function(List<AddNotificationModel> notificationList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
   }) {
     return loading?.call();
   }
@@ -613,10 +429,9 @@ class _$LoadingStateImpl implements LoadingState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
+    TResult Function(List<AddNotificationModel> notificationList)? success,
     TResult Function()? empty,
     TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -632,7 +447,6 @@ class _$LoadingStateImpl implements LoadingState {
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
   }) {
     return loading(this);
   }
@@ -644,7 +458,6 @@ class _$LoadingStateImpl implements LoadingState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
   }) {
     return loading?.call(this);
   }
@@ -656,7 +469,6 @@ class _$LoadingStateImpl implements LoadingState {
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -666,7 +478,7 @@ class _$LoadingStateImpl implements LoadingState {
   }
 }
 
-abstract class LoadingState implements GetAllUsersState {
+abstract class LoadingState implements GetAllNotificationAdminState {
   const factory LoadingState() = _$LoadingStateImpl;
 }
 
@@ -676,12 +488,12 @@ abstract class _$$SuccessStateImplCopyWith<$Res> {
           _$SuccessStateImpl value, $Res Function(_$SuccessStateImpl) then) =
       __$$SuccessStateImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({List<UsersModel> userList});
+  $Res call({List<AddNotificationModel> notificationList});
 }
 
 /// @nodoc
 class __$$SuccessStateImplCopyWithImpl<$Res>
-    extends _$GetAllUsersStateCopyWithImpl<$Res, _$SuccessStateImpl>
+    extends _$GetAllNotificationAdminStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
@@ -690,13 +502,13 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userList = null,
+    Object? notificationList = null,
   }) {
     return _then(_$SuccessStateImpl(
-      userList: null == userList
-          ? _value._userList
-          : userList // ignore: cast_nullable_to_non_nullable
-              as List<UsersModel>,
+      notificationList: null == notificationList
+          ? _value._notificationList
+          : notificationList // ignore: cast_nullable_to_non_nullable
+              as List<AddNotificationModel>,
     ));
   }
 }
@@ -704,20 +516,22 @@ class __$$SuccessStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$SuccessStateImpl implements SuccessState {
-  const _$SuccessStateImpl({required final List<UsersModel> userList})
-      : _userList = userList;
+  const _$SuccessStateImpl(
+      {required final List<AddNotificationModel> notificationList})
+      : _notificationList = notificationList;
 
-  final List<UsersModel> _userList;
+  final List<AddNotificationModel> _notificationList;
   @override
-  List<UsersModel> get userList {
-    if (_userList is EqualUnmodifiableListView) return _userList;
+  List<AddNotificationModel> get notificationList {
+    if (_notificationList is EqualUnmodifiableListView)
+      return _notificationList;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_userList);
+    return EqualUnmodifiableListView(_notificationList);
   }
 
   @override
   String toString() {
-    return 'GetAllUsersState.success(userList: $userList)';
+    return 'GetAllNotificationAdminState.success(notificationList: $notificationList)';
   }
 
   @override
@@ -725,12 +539,13 @@ class _$SuccessStateImpl implements SuccessState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessStateImpl &&
-            const DeepCollectionEquality().equals(other._userList, _userList));
+            const DeepCollectionEquality()
+                .equals(other._notificationList, _notificationList));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userList));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_notificationList));
 
   @JsonKey(ignore: true)
   @override
@@ -742,38 +557,36 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
+    required TResult Function(List<AddNotificationModel> notificationList)
+        success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
   }) {
-    return success(userList);
+    return success(notificationList);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
+    TResult? Function(List<AddNotificationModel> notificationList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
   }) {
-    return success?.call(userList);
+    return success?.call(notificationList);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
+    TResult Function(List<AddNotificationModel> notificationList)? success,
     TResult Function()? empty,
     TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
     required TResult orElse(),
   }) {
     if (success != null) {
-      return success(userList);
+      return success(notificationList);
     }
     return orElse();
   }
@@ -785,7 +598,6 @@ class _$SuccessStateImpl implements SuccessState {
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
   }) {
     return success(this);
   }
@@ -797,7 +609,6 @@ class _$SuccessStateImpl implements SuccessState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
   }) {
     return success?.call(this);
   }
@@ -809,7 +620,6 @@ class _$SuccessStateImpl implements SuccessState {
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
     required TResult orElse(),
   }) {
     if (success != null) {
@@ -819,11 +629,12 @@ class _$SuccessStateImpl implements SuccessState {
   }
 }
 
-abstract class SuccessState implements GetAllUsersState {
-  const factory SuccessState({required final List<UsersModel> userList}) =
+abstract class SuccessState implements GetAllNotificationAdminState {
+  const factory SuccessState(
+          {required final List<AddNotificationModel> notificationList}) =
       _$SuccessStateImpl;
 
-  List<UsersModel> get userList;
+  List<AddNotificationModel> get notificationList;
   @JsonKey(ignore: true)
   _$$SuccessStateImplCopyWith<_$SuccessStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
@@ -838,7 +649,7 @@ abstract class _$$EmptyStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$EmptyStateImplCopyWithImpl<$Res>
-    extends _$GetAllUsersStateCopyWithImpl<$Res, _$EmptyStateImpl>
+    extends _$GetAllNotificationAdminStateCopyWithImpl<$Res, _$EmptyStateImpl>
     implements _$$EmptyStateImplCopyWith<$Res> {
   __$$EmptyStateImplCopyWithImpl(
       _$EmptyStateImpl _value, $Res Function(_$EmptyStateImpl) _then)
@@ -852,7 +663,7 @@ class _$EmptyStateImpl implements EmptyState {
 
   @override
   String toString() {
-    return 'GetAllUsersState.empty()';
+    return 'GetAllNotificationAdminState.empty()';
   }
 
   @override
@@ -868,10 +679,10 @@ class _$EmptyStateImpl implements EmptyState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
+    required TResult Function(List<AddNotificationModel> notificationList)
+        success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
   }) {
     return empty();
   }
@@ -880,10 +691,9 @@ class _$EmptyStateImpl implements EmptyState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
+    TResult? Function(List<AddNotificationModel> notificationList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
   }) {
     return empty?.call();
   }
@@ -892,10 +702,9 @@ class _$EmptyStateImpl implements EmptyState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
+    TResult Function(List<AddNotificationModel> notificationList)? success,
     TResult Function()? empty,
     TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -911,7 +720,6 @@ class _$EmptyStateImpl implements EmptyState {
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
   }) {
     return empty(this);
   }
@@ -923,7 +731,6 @@ class _$EmptyStateImpl implements EmptyState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
   }) {
     return empty?.call(this);
   }
@@ -935,7 +742,6 @@ class _$EmptyStateImpl implements EmptyState {
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
     required TResult orElse(),
   }) {
     if (empty != null) {
@@ -945,7 +751,7 @@ class _$EmptyStateImpl implements EmptyState {
   }
 }
 
-abstract class EmptyState implements GetAllUsersState {
+abstract class EmptyState implements GetAllNotificationAdminState {
   const factory EmptyState() = _$EmptyStateImpl;
 }
 
@@ -960,7 +766,7 @@ abstract class _$$ErrorStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorStateImplCopyWithImpl<$Res>
-    extends _$GetAllUsersStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    extends _$GetAllNotificationAdminStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
@@ -990,7 +796,7 @@ class _$ErrorStateImpl implements ErrorState {
 
   @override
   String toString() {
-    return 'GetAllUsersState.error(error: $error)';
+    return 'GetAllNotificationAdminState.error(error: $error)';
   }
 
   @override
@@ -1014,10 +820,10 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
+    required TResult Function(List<AddNotificationModel> notificationList)
+        success,
     required TResult Function() empty,
     required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
   }) {
     return error(this.error);
   }
@@ -1026,10 +832,9 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
+    TResult? Function(List<AddNotificationModel> notificationList)? success,
     TResult? Function()? empty,
     TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
   }) {
     return error?.call(this.error);
   }
@@ -1038,10 +843,9 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
+    TResult Function(List<AddNotificationModel> notificationList)? success,
     TResult Function()? empty,
     TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1057,7 +861,6 @@ class _$ErrorStateImpl implements ErrorState {
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
     required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
   }) {
     return error(this);
   }
@@ -1069,7 +872,6 @@ class _$ErrorStateImpl implements ErrorState {
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
     TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
   }) {
     return error?.call(this);
   }
@@ -1081,7 +883,6 @@ class _$ErrorStateImpl implements ErrorState {
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
     TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -1091,171 +892,11 @@ class _$ErrorStateImpl implements ErrorState {
   }
 }
 
-abstract class ErrorState implements GetAllUsersState {
+abstract class ErrorState implements GetAllNotificationAdminState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
   @JsonKey(ignore: true)
   _$$ErrorStateImplCopyWith<_$ErrorStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$$SearchUserStateImplCopyWith<$Res> {
-  factory _$$SearchUserStateImplCopyWith(_$SearchUserStateImpl value,
-          $Res Function(_$SearchUserStateImpl) then) =
-      __$$SearchUserStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({List<UsersModel> userList});
-}
-
-/// @nodoc
-class __$$SearchUserStateImplCopyWithImpl<$Res>
-    extends _$GetAllUsersStateCopyWithImpl<$Res, _$SearchUserStateImpl>
-    implements _$$SearchUserStateImplCopyWith<$Res> {
-  __$$SearchUserStateImplCopyWithImpl(
-      _$SearchUserStateImpl _value, $Res Function(_$SearchUserStateImpl) _then)
-      : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? userList = null,
-  }) {
-    return _then(_$SearchUserStateImpl(
-      userList: null == userList
-          ? _value._userList
-          : userList // ignore: cast_nullable_to_non_nullable
-              as List<UsersModel>,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SearchUserStateImpl implements SearchUserState {
-  const _$SearchUserStateImpl({required final List<UsersModel> userList})
-      : _userList = userList;
-
-  final List<UsersModel> _userList;
-  @override
-  List<UsersModel> get userList {
-    if (_userList is EqualUnmodifiableListView) return _userList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_userList);
-  }
-
-  @override
-  String toString() {
-    return 'GetAllUsersState.search(userList: $userList)';
-  }
-
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$SearchUserStateImpl &&
-            const DeepCollectionEquality().equals(other._userList, _userList));
-  }
-
-  @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_userList));
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$SearchUserStateImplCopyWith<_$SearchUserStateImpl> get copyWith =>
-      __$$SearchUserStateImplCopyWithImpl<_$SearchUserStateImpl>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() loading,
-    required TResult Function(List<UsersModel> userList) success,
-    required TResult Function() empty,
-    required TResult Function(String error) error,
-    required TResult Function(List<UsersModel> userList) search,
-  }) {
-    return search(userList);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult? Function()? loading,
-    TResult? Function(List<UsersModel> userList)? success,
-    TResult? Function()? empty,
-    TResult? Function(String error)? error,
-    TResult? Function(List<UsersModel> userList)? search,
-  }) {
-    return search?.call(userList);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? loading,
-    TResult Function(List<UsersModel> userList)? success,
-    TResult Function()? empty,
-    TResult Function(String error)? error,
-    TResult Function(List<UsersModel> userList)? search,
-    required TResult orElse(),
-  }) {
-    if (search != null) {
-      return search(userList);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(LoadingState value) loading,
-    required TResult Function(SuccessState value) success,
-    required TResult Function(EmptyState value) empty,
-    required TResult Function(ErrorState value) error,
-    required TResult Function(SearchUserState value) search,
-  }) {
-    return search(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(LoadingState value)? loading,
-    TResult? Function(SuccessState value)? success,
-    TResult? Function(EmptyState value)? empty,
-    TResult? Function(ErrorState value)? error,
-    TResult? Function(SearchUserState value)? search,
-  }) {
-    return search?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(LoadingState value)? loading,
-    TResult Function(SuccessState value)? success,
-    TResult Function(EmptyState value)? empty,
-    TResult Function(ErrorState value)? error,
-    TResult Function(SearchUserState value)? search,
-    required TResult orElse(),
-  }) {
-    if (search != null) {
-      return search(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SearchUserState implements GetAllUsersState {
-  const factory SearchUserState({required final List<UsersModel> userList}) =
-      _$SearchUserStateImpl;
-
-  List<UsersModel> get userList;
-  @JsonKey(ignore: true)
-  _$$SearchUserStateImplCopyWith<_$SearchUserStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

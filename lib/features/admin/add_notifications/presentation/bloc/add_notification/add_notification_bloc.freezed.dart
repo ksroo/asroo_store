@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'delete_category_bloc.dart';
+part of 'add_notification_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -15,58 +15,71 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
-mixin _$DeleteCategoryEvent {
+mixin _$AddNotificationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String categoryId) deleteCatgeory,
+    required TResult Function(AddNotificationModel notificationModel)
+        createNotification,
+    required TResult Function(AddNotificationModel notificationModel)
+        deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String categoryId)? deleteCatgeory,
+    TResult? Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult? Function(AddNotificationModel notificationModel)?
+        deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String categoryId)? deleteCatgeory,
+    TResult Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult Function(AddNotificationModel notificationModel)?
+        deleteNotification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(RemoveCategoryEvent value) deleteCatgeory,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $DeleteCategoryEventCopyWith<$Res> {
-  factory $DeleteCategoryEventCopyWith(
-          DeleteCategoryEvent value, $Res Function(DeleteCategoryEvent) then) =
-      _$DeleteCategoryEventCopyWithImpl<$Res, DeleteCategoryEvent>;
+abstract class $AddNotificationEventCopyWith<$Res> {
+  factory $AddNotificationEventCopyWith(AddNotificationEvent value,
+          $Res Function(AddNotificationEvent) then) =
+      _$AddNotificationEventCopyWithImpl<$Res, AddNotificationEvent>;
 }
 
 /// @nodoc
-class _$DeleteCategoryEventCopyWithImpl<$Res, $Val extends DeleteCategoryEvent>
-    implements $DeleteCategoryEventCopyWith<$Res> {
-  _$DeleteCategoryEventCopyWithImpl(this._value, this._then);
+class _$AddNotificationEventCopyWithImpl<$Res,
+        $Val extends AddNotificationEvent>
+    implements $AddNotificationEventCopyWith<$Res> {
+  _$AddNotificationEventCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -83,7 +96,7 @@ abstract class _$$StartedImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$StartedImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryEventCopyWithImpl<$Res, _$StartedImpl>
+    extends _$AddNotificationEventCopyWithImpl<$Res, _$StartedImpl>
     implements _$$StartedImplCopyWith<$Res> {
   __$$StartedImplCopyWithImpl(
       _$StartedImpl _value, $Res Function(_$StartedImpl) _then)
@@ -97,7 +110,7 @@ class _$StartedImpl implements _Started {
 
   @override
   String toString() {
-    return 'DeleteCategoryEvent.started()';
+    return 'AddNotificationEvent.started()';
   }
 
   @override
@@ -113,7 +126,10 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String categoryId) deleteCatgeory,
+    required TResult Function(AddNotificationModel notificationModel)
+        createNotification,
+    required TResult Function(AddNotificationModel notificationModel)
+        deleteNotification,
   }) {
     return started();
   }
@@ -122,7 +138,10 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String categoryId)? deleteCatgeory,
+    TResult? Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult? Function(AddNotificationModel notificationModel)?
+        deleteNotification,
   }) {
     return started?.call();
   }
@@ -131,7 +150,10 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String categoryId)? deleteCatgeory,
+    TResult Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult Function(AddNotificationModel notificationModel)?
+        deleteNotification,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -144,7 +166,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(RemoveCategoryEvent value) deleteCatgeory,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
   }) {
     return started(this);
   }
@@ -153,7 +176,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
   }) {
     return started?.call(this);
   }
@@ -162,7 +186,8 @@ class _$StartedImpl implements _Started {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
     required TResult orElse(),
   }) {
     if (started != null) {
@@ -172,100 +197,112 @@ class _$StartedImpl implements _Started {
   }
 }
 
-abstract class _Started implements DeleteCategoryEvent {
+abstract class _Started implements AddNotificationEvent {
   const factory _Started() = _$StartedImpl;
 }
 
 /// @nodoc
-abstract class _$$RemoveCategoryEventImplCopyWith<$Res> {
-  factory _$$RemoveCategoryEventImplCopyWith(_$RemoveCategoryEventImpl value,
-          $Res Function(_$RemoveCategoryEventImpl) then) =
-      __$$RemoveCategoryEventImplCopyWithImpl<$Res>;
+abstract class _$$CreateNotificationEventImplCopyWith<$Res> {
+  factory _$$CreateNotificationEventImplCopyWith(
+          _$CreateNotificationEventImpl value,
+          $Res Function(_$CreateNotificationEventImpl) then) =
+      __$$CreateNotificationEventImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({String categoryId});
+  $Res call({AddNotificationModel notificationModel});
 }
 
 /// @nodoc
-class __$$RemoveCategoryEventImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryEventCopyWithImpl<$Res, _$RemoveCategoryEventImpl>
-    implements _$$RemoveCategoryEventImplCopyWith<$Res> {
-  __$$RemoveCategoryEventImplCopyWithImpl(_$RemoveCategoryEventImpl _value,
-      $Res Function(_$RemoveCategoryEventImpl) _then)
+class __$$CreateNotificationEventImplCopyWithImpl<$Res>
+    extends _$AddNotificationEventCopyWithImpl<$Res,
+        _$CreateNotificationEventImpl>
+    implements _$$CreateNotificationEventImplCopyWith<$Res> {
+  __$$CreateNotificationEventImplCopyWithImpl(
+      _$CreateNotificationEventImpl _value,
+      $Res Function(_$CreateNotificationEventImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? categoryId = null,
+    Object? notificationModel = null,
   }) {
-    return _then(_$RemoveCategoryEventImpl(
-      categoryId: null == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
+    return _then(_$CreateNotificationEventImpl(
+      notificationModel: null == notificationModel
+          ? _value.notificationModel
+          : notificationModel // ignore: cast_nullable_to_non_nullable
+              as AddNotificationModel,
     ));
   }
 }
 
 /// @nodoc
 
-class _$RemoveCategoryEventImpl implements RemoveCategoryEvent {
-  const _$RemoveCategoryEventImpl({required this.categoryId});
+class _$CreateNotificationEventImpl implements CreateNotificationEvent {
+  const _$CreateNotificationEventImpl({required this.notificationModel});
 
   @override
-  final String categoryId;
+  final AddNotificationModel notificationModel;
 
   @override
   String toString() {
-    return 'DeleteCategoryEvent.deleteCatgeory(categoryId: $categoryId)';
+    return 'AddNotificationEvent.createNotification(notificationModel: $notificationModel)';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$RemoveCategoryEventImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId));
+            other is _$CreateNotificationEventImpl &&
+            (identical(other.notificationModel, notificationModel) ||
+                other.notificationModel == notificationModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryId);
+  int get hashCode => Object.hash(runtimeType, notificationModel);
 
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$RemoveCategoryEventImplCopyWith<_$RemoveCategoryEventImpl> get copyWith =>
-      __$$RemoveCategoryEventImplCopyWithImpl<_$RemoveCategoryEventImpl>(
-          this, _$identity);
+  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
+      get copyWith => __$$CreateNotificationEventImplCopyWithImpl<
+          _$CreateNotificationEventImpl>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() started,
-    required TResult Function(String categoryId) deleteCatgeory,
+    required TResult Function(AddNotificationModel notificationModel)
+        createNotification,
+    required TResult Function(AddNotificationModel notificationModel)
+        deleteNotification,
   }) {
-    return deleteCatgeory(categoryId);
+    return createNotification(notificationModel);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? started,
-    TResult? Function(String categoryId)? deleteCatgeory,
+    TResult? Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult? Function(AddNotificationModel notificationModel)?
+        deleteNotification,
   }) {
-    return deleteCatgeory?.call(categoryId);
+    return createNotification?.call(notificationModel);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? started,
-    TResult Function(String categoryId)? deleteCatgeory,
+    TResult Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult Function(AddNotificationModel notificationModel)?
+        deleteNotification,
     required TResult orElse(),
   }) {
-    if (deleteCatgeory != null) {
-      return deleteCatgeory(categoryId);
+    if (createNotification != null) {
+      return createNotification(notificationModel);
     }
     return orElse();
   }
@@ -274,50 +311,206 @@ class _$RemoveCategoryEventImpl implements RemoveCategoryEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_Started value) started,
-    required TResult Function(RemoveCategoryEvent value) deleteCatgeory,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
   }) {
-    return deleteCatgeory(this);
+    return createNotification(this);
   }
 
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_Started value)? started,
-    TResult? Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
   }) {
-    return deleteCatgeory?.call(this);
+    return createNotification?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Started value)? started,
-    TResult Function(RemoveCategoryEvent value)? deleteCatgeory,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
     required TResult orElse(),
   }) {
-    if (deleteCatgeory != null) {
-      return deleteCatgeory(this);
+    if (createNotification != null) {
+      return createNotification(this);
     }
     return orElse();
   }
 }
 
-abstract class RemoveCategoryEvent implements DeleteCategoryEvent {
-  const factory RemoveCategoryEvent({required final String categoryId}) =
-      _$RemoveCategoryEventImpl;
+abstract class CreateNotificationEvent implements AddNotificationEvent {
+  const factory CreateNotificationEvent(
+          {required final AddNotificationModel notificationModel}) =
+      _$CreateNotificationEventImpl;
 
-  String get categoryId;
+  AddNotificationModel get notificationModel;
   @JsonKey(ignore: true)
-  _$$RemoveCategoryEventImplCopyWith<_$RemoveCategoryEventImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$$CreateNotificationEventImplCopyWith<_$CreateNotificationEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-mixin _$DeleteCategoryState {
+abstract class _$$DeleteNotificationEventImplCopyWith<$Res> {
+  factory _$$DeleteNotificationEventImplCopyWith(
+          _$DeleteNotificationEventImpl value,
+          $Res Function(_$DeleteNotificationEventImpl) then) =
+      __$$DeleteNotificationEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({AddNotificationModel notificationModel});
+}
+
+/// @nodoc
+class __$$DeleteNotificationEventImplCopyWithImpl<$Res>
+    extends _$AddNotificationEventCopyWithImpl<$Res,
+        _$DeleteNotificationEventImpl>
+    implements _$$DeleteNotificationEventImplCopyWith<$Res> {
+  __$$DeleteNotificationEventImplCopyWithImpl(
+      _$DeleteNotificationEventImpl _value,
+      $Res Function(_$DeleteNotificationEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? notificationModel = null,
+  }) {
+    return _then(_$DeleteNotificationEventImpl(
+      notificationModel: null == notificationModel
+          ? _value.notificationModel
+          : notificationModel // ignore: cast_nullable_to_non_nullable
+              as AddNotificationModel,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$DeleteNotificationEventImpl implements DeleteNotificationEvent {
+  const _$DeleteNotificationEventImpl({required this.notificationModel});
+
+  @override
+  final AddNotificationModel notificationModel;
+
+  @override
+  String toString() {
+    return 'AddNotificationEvent.deleteNotification(notificationModel: $notificationModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$DeleteNotificationEventImpl &&
+            (identical(other.notificationModel, notificationModel) ||
+                other.notificationModel == notificationModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, notificationModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
+      get copyWith => __$$DeleteNotificationEventImplCopyWithImpl<
+          _$DeleteNotificationEventImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() started,
+    required TResult Function(AddNotificationModel notificationModel)
+        createNotification,
+    required TResult Function(AddNotificationModel notificationModel)
+        deleteNotification,
+  }) {
+    return deleteNotification(notificationModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? started,
+    TResult? Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult? Function(AddNotificationModel notificationModel)?
+        deleteNotification,
+  }) {
+    return deleteNotification?.call(notificationModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? started,
+    TResult Function(AddNotificationModel notificationModel)?
+        createNotification,
+    TResult Function(AddNotificationModel notificationModel)?
+        deleteNotification,
+    required TResult orElse(),
+  }) {
+    if (deleteNotification != null) {
+      return deleteNotification(notificationModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Started value) started,
+    required TResult Function(CreateNotificationEvent value) createNotification,
+    required TResult Function(DeleteNotificationEvent value) deleteNotification,
+  }) {
+    return deleteNotification(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Started value)? started,
+    TResult? Function(CreateNotificationEvent value)? createNotification,
+    TResult? Function(DeleteNotificationEvent value)? deleteNotification,
+  }) {
+    return deleteNotification?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Started value)? started,
+    TResult Function(CreateNotificationEvent value)? createNotification,
+    TResult Function(DeleteNotificationEvent value)? deleteNotification,
+    required TResult orElse(),
+  }) {
+    if (deleteNotification != null) {
+      return deleteNotification(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteNotificationEvent implements AddNotificationEvent {
+  const factory DeleteNotificationEvent(
+          {required final AddNotificationModel notificationModel}) =
+      _$DeleteNotificationEventImpl;
+
+  AddNotificationModel get notificationModel;
+  @JsonKey(ignore: true)
+  _$$DeleteNotificationEventImplCopyWith<_$DeleteNotificationEventImpl>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+mixin _$AddNotificationState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String categoryId) loading,
+    required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) =>
@@ -325,7 +518,7 @@ mixin _$DeleteCategoryState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String categoryId)? loading,
+    TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) =>
@@ -333,7 +526,7 @@ mixin _$DeleteCategoryState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String categoryId)? loading,
+    TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -367,16 +560,17 @@ mixin _$DeleteCategoryState {
 }
 
 /// @nodoc
-abstract class $DeleteCategoryStateCopyWith<$Res> {
-  factory $DeleteCategoryStateCopyWith(
-          DeleteCategoryState value, $Res Function(DeleteCategoryState) then) =
-      _$DeleteCategoryStateCopyWithImpl<$Res, DeleteCategoryState>;
+abstract class $AddNotificationStateCopyWith<$Res> {
+  factory $AddNotificationStateCopyWith(AddNotificationState value,
+          $Res Function(AddNotificationState) then) =
+      _$AddNotificationStateCopyWithImpl<$Res, AddNotificationState>;
 }
 
 /// @nodoc
-class _$DeleteCategoryStateCopyWithImpl<$Res, $Val extends DeleteCategoryState>
-    implements $DeleteCategoryStateCopyWith<$Res> {
-  _$DeleteCategoryStateCopyWithImpl(this._value, this._then);
+class _$AddNotificationStateCopyWithImpl<$Res,
+        $Val extends AddNotificationState>
+    implements $AddNotificationStateCopyWith<$Res> {
+  _$AddNotificationStateCopyWithImpl(this._value, this._then);
 
   // ignore: unused_field
   final $Val _value;
@@ -393,7 +587,7 @@ abstract class _$$InitialImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$InitialImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryStateCopyWithImpl<$Res, _$InitialImpl>
+    extends _$AddNotificationStateCopyWithImpl<$Res, _$InitialImpl>
     implements _$$InitialImplCopyWith<$Res> {
   __$$InitialImplCopyWithImpl(
       _$InitialImpl _value, $Res Function(_$InitialImpl) _then)
@@ -407,7 +601,7 @@ class _$InitialImpl implements _Initial {
 
   @override
   String toString() {
-    return 'DeleteCategoryState.initial()';
+    return 'AddNotificationState.initial()';
   }
 
   @override
@@ -423,7 +617,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String categoryId) loading,
+    required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -434,7 +628,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String categoryId)? loading,
+    TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -445,7 +639,7 @@ class _$InitialImpl implements _Initial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String categoryId)? loading,
+    TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -494,7 +688,7 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements DeleteCategoryState {
+abstract class _Initial implements AddNotificationState {
   const factory _Initial() = _$InitialImpl;
 }
 
@@ -503,96 +697,69 @@ abstract class _$$LoadingStateImplCopyWith<$Res> {
   factory _$$LoadingStateImplCopyWith(
           _$LoadingStateImpl value, $Res Function(_$LoadingStateImpl) then) =
       __$$LoadingStateImplCopyWithImpl<$Res>;
-  @useResult
-  $Res call({String categoryId});
 }
 
 /// @nodoc
 class __$$LoadingStateImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryStateCopyWithImpl<$Res, _$LoadingStateImpl>
+    extends _$AddNotificationStateCopyWithImpl<$Res, _$LoadingStateImpl>
     implements _$$LoadingStateImplCopyWith<$Res> {
   __$$LoadingStateImplCopyWithImpl(
       _$LoadingStateImpl _value, $Res Function(_$LoadingStateImpl) _then)
       : super(_value, _then);
-
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? categoryId = null,
-  }) {
-    return _then(_$LoadingStateImpl(
-      categoryId: null == categoryId
-          ? _value.categoryId
-          : categoryId // ignore: cast_nullable_to_non_nullable
-              as String,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$LoadingStateImpl implements LoadingState {
-  const _$LoadingStateImpl({required this.categoryId});
-
-  @override
-  final String categoryId;
+  const _$LoadingStateImpl();
 
   @override
   String toString() {
-    return 'DeleteCategoryState.loading(categoryId: $categoryId)';
+    return 'AddNotificationState.loading()';
   }
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$LoadingStateImpl &&
-            (identical(other.categoryId, categoryId) ||
-                other.categoryId == categoryId));
+        (other.runtimeType == runtimeType && other is _$LoadingStateImpl);
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, categoryId);
-
-  @JsonKey(ignore: true)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
-      __$$LoadingStateImplCopyWithImpl<_$LoadingStateImpl>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String categoryId) loading,
+    required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
-    return loading(categoryId);
+    return loading();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String categoryId)? loading,
+    TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
-    return loading?.call(categoryId);
+    return loading?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String categoryId)? loading,
+    TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
   }) {
     if (loading != null) {
-      return loading(categoryId);
+      return loading();
     }
     return orElse();
   }
@@ -635,14 +802,8 @@ class _$LoadingStateImpl implements LoadingState {
   }
 }
 
-abstract class LoadingState implements DeleteCategoryState {
-  const factory LoadingState({required final String categoryId}) =
-      _$LoadingStateImpl;
-
-  String get categoryId;
-  @JsonKey(ignore: true)
-  _$$LoadingStateImplCopyWith<_$LoadingStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+abstract class LoadingState implements AddNotificationState {
+  const factory LoadingState() = _$LoadingStateImpl;
 }
 
 /// @nodoc
@@ -654,7 +815,7 @@ abstract class _$$SuccessStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$SuccessStateImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryStateCopyWithImpl<$Res, _$SuccessStateImpl>
+    extends _$AddNotificationStateCopyWithImpl<$Res, _$SuccessStateImpl>
     implements _$$SuccessStateImplCopyWith<$Res> {
   __$$SuccessStateImplCopyWithImpl(
       _$SuccessStateImpl _value, $Res Function(_$SuccessStateImpl) _then)
@@ -668,7 +829,7 @@ class _$SuccessStateImpl implements SuccessState {
 
   @override
   String toString() {
-    return 'DeleteCategoryState.success()';
+    return 'AddNotificationState.success()';
   }
 
   @override
@@ -684,7 +845,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String categoryId) loading,
+    required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -695,7 +856,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String categoryId)? loading,
+    TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -706,7 +867,7 @@ class _$SuccessStateImpl implements SuccessState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String categoryId)? loading,
+    TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -755,7 +916,7 @@ class _$SuccessStateImpl implements SuccessState {
   }
 }
 
-abstract class SuccessState implements DeleteCategoryState {
+abstract class SuccessState implements AddNotificationState {
   const factory SuccessState() = _$SuccessStateImpl;
 }
 
@@ -770,7 +931,7 @@ abstract class _$$ErrorStateImplCopyWith<$Res> {
 
 /// @nodoc
 class __$$ErrorStateImplCopyWithImpl<$Res>
-    extends _$DeleteCategoryStateCopyWithImpl<$Res, _$ErrorStateImpl>
+    extends _$AddNotificationStateCopyWithImpl<$Res, _$ErrorStateImpl>
     implements _$$ErrorStateImplCopyWith<$Res> {
   __$$ErrorStateImplCopyWithImpl(
       _$ErrorStateImpl _value, $Res Function(_$ErrorStateImpl) _then)
@@ -800,7 +961,7 @@ class _$ErrorStateImpl implements ErrorState {
 
   @override
   String toString() {
-    return 'DeleteCategoryState.error(error: $error)';
+    return 'AddNotificationState.error(error: $error)';
   }
 
   @override
@@ -824,7 +985,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
-    required TResult Function(String categoryId) loading,
+    required TResult Function() loading,
     required TResult Function() success,
     required TResult Function(String error) error,
   }) {
@@ -835,7 +996,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
-    TResult? Function(String categoryId)? loading,
+    TResult? Function()? loading,
     TResult? Function()? success,
     TResult? Function(String error)? error,
   }) {
@@ -846,7 +1007,7 @@ class _$ErrorStateImpl implements ErrorState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
-    TResult Function(String categoryId)? loading,
+    TResult Function()? loading,
     TResult Function()? success,
     TResult Function(String error)? error,
     required TResult orElse(),
@@ -895,7 +1056,7 @@ class _$ErrorStateImpl implements ErrorState {
   }
 }
 
-abstract class ErrorState implements DeleteCategoryState {
+abstract class ErrorState implements AddNotificationState {
   const factory ErrorState({required final String error}) = _$ErrorStateImpl;
 
   String get error;
