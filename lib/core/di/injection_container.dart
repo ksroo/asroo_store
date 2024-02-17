@@ -10,6 +10,7 @@ import 'package:asroo_store/features/admin/add_categories/presentation/bloc/crea
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/delete_category/delete_category_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/get_all_admin_categories/get_all_admin_categories_bloc.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/bloc/update_category/update_category_bloc.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/bloc/add_notification/add_notification_bloc.dart';
 import 'package:asroo_store/features/admin/add_products/data/data_source/products_admin_data_source.dart';
 import 'package:asroo_store/features/admin/add_products/data/repos/products_admin_repo.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/bloc/create_product/create_prodcut_bloc.dart';
@@ -40,6 +41,7 @@ Future<void> setupInjector() async {
   await _initCategoriesAdmin();
   await _initProductsAdmin();
   await _initUsersAdmin();
+  await _initAddNotification();
 }
 
 Future<void> _initCore() async {
@@ -97,4 +99,8 @@ Future<void> _initUsersAdmin() async {
     ..registerLazySingleton(() => UserDataSource(sl()))
     ..registerFactory(() => GetAllUsersBloc(sl()))
     ..registerFactory(() => DeleteUserBloc(sl()));
+}
+
+Future<void> _initAddNotification() async {
+  sl.registerFactory(AddNotificationBloc.new);
 }
