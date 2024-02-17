@@ -6,6 +6,7 @@ import 'package:asroo_store/core/style/colors/colors_dark.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/admin/add_notifications/data/models/add_notification_model.dart';
+import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/delete/delete_notification_widget.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/widgets/edit/edit_notification.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,9 +50,8 @@ class AddNotificationItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 //delete notification
-                const Icon(
-                  Icons.delete,
-                  color: Colors.red,
+                DeleteNotificationWidget(
+                  notificationModel: notificationModel,
                 ),
                 SizedBox(width: 40.w),
                 //Edit notification
