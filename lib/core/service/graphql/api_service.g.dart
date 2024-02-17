@@ -22,7 +22,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<LoginResponse> login(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -50,10 +50,10 @@ class _ApiService implements ApiService {
 
   @override
   Future<UserRoleResponse> userRole() async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final Map<String, dynamic>? _data = null;
+    const Map<String, dynamic>? _data = null;
     final _result = await _dio
         .fetch<Map<String, dynamic>>(_setStreamType<UserRoleResponse>(Options(
       method: 'GET',
@@ -77,7 +77,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<UploadImageResourse> uploadImage(FormData file) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = file;
@@ -104,7 +104,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<SignUpResponse> signUp(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -133,7 +133,7 @@ class _ApiService implements ApiService {
   @override
   Future<ProductsNumberResponse> numberOfProducts(
       Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -162,7 +162,7 @@ class _ApiService implements ApiService {
   @override
   Future<CategoriesNumberResponse> numberOfCategories(
       Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -190,7 +190,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<UsersNumberResponse> numberOfUsers(Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -219,7 +219,7 @@ class _ApiService implements ApiService {
   @override
   Future<CategoriesGetAllResponse> getAllCategories(
       Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -248,7 +248,7 @@ class _ApiService implements ApiService {
   @override
   Future<CreateCategoryResponse> createCategory(
       Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -276,7 +276,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> deleteCategory(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -301,7 +301,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> updateCategory(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -327,7 +327,7 @@ class _ApiService implements ApiService {
   @override
   Future<GetAllProductResponse> getAllProduct(
       Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -355,7 +355,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> createProduct(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -380,7 +380,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> deleteProduct(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -405,7 +405,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> updateProduct(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -430,7 +430,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<GetAllUsersResponse> getAllUsers(Map<String, dynamic> query) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
@@ -458,7 +458,7 @@ class _ApiService implements ApiService {
 
   @override
   Future<void> deleteUser(Map<String, dynamic> mutation) async {
-    const _extra = <String, dynamic>{};
+    final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};

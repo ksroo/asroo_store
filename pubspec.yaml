@@ -51,6 +51,10 @@ dependencies:
   #Notifications
   firebase_messaging: ^14.7.15
 
+  #local database Hive
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
 
 
 dev_dependencies:
@@ -64,6 +68,7 @@ dev_dependencies:
   freezed: ^2.4.6
   retrofit_generator: ^8.0.6
   json_serializable: ^6.7.1
+  hive_generator: ^2.0.1
 
 flutter_icons:
   android: true
