@@ -5,7 +5,7 @@ class CatgeoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
+    return const Center(
       child: Text(
         'Categories Screen',
         style: TextStyle(color: Colors.white, fontSize: 20),
