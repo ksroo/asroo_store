@@ -7,7 +7,7 @@ import 'package:asroo_store/features/customer/home/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/bottom_nav_bar.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/main_customer_app_bar.dart';
-import 'package:asroo_store/features/customer/profile/profile_screen.dart';
+import 'package:asroo_store/features/customer/profile/presentation/screen/profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
