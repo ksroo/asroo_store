@@ -28,6 +28,7 @@ dependencies:
   flutter_zoom_drawer: ^3.1.2
   shimmer: ^3.0.0
   cached_network_image: ^3.3.1
+  flutter_svg: ^2.0.9
 
   #Bloc
   flutter_bloc: ^8.1.3
