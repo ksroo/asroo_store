@@ -33,6 +33,7 @@ import 'package:asroo_store/features/admin/users/presentation/bloc/get_all_users
 import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart';
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
+import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -46,6 +47,7 @@ Future<void> setupInjector() async {
   await _initProductsAdmin();
   await _initUsersAdmin();
   await _initAddNotification();
+  await _initMain();
 }
 
 Future<void> _initCore() async {
@@ -112,4 +114,8 @@ Future<void> _initAddNotification() async {
     ..registerFactory(() => SendNotificationBloc(sl()))
     ..registerLazySingleton(() => AddNotificationRepo(sl()))
     ..registerLazySingleton(AddNotificationDataSource.new);
+}
+
+Future<void> _initMain() async {
+  sl.registerFactory(MainCubit.new);
 }
