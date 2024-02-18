@@ -1,8 +1,11 @@
 import 'package:asroo_store/core/common/animations/animate_do.dart';
+import 'package:asroo_store/core/enums/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/images/app_images.dart';
+import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/widgets/icon_tap_nav_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -34,34 +37,59 @@ class MainBottomNavBar extends StatelessWidget {
                         width: 300.w,
                         child: Padding(
                           padding: EdgeInsets.symmetric(horizontal: 20.w),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              //Home Screen
-                              IconTapNavBar(
-                                onTap: () {},
-                                icon: AppImages.homeTab,
-                                isSelected: true,
-                              ),
-                              //Categories Screen
-                              IconTapNavBar(
-                                onTap: () {},
-                                icon: AppImages.categoriesTab,
-                                isSelected: true,
-                              ),
-                              //Favourites Screen
-                              IconTapNavBar(
-                                onTap: () {},
-                                icon: AppImages.favouritesTab,
-                                isSelected: true,
-                              ),
-                              //Profile Screen
-                              IconTapNavBar(
-                                onTap: () {},
-                                icon: AppImages.profileTab,
-                                isSelected: true,
-                              ),
-                            ],
+                          child: BlocBuilder<MainCubit, MainState>(
+                            builder: (context, state) {
+                              final cubit = context.read<MainCubit>();
+                              return Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  //Home Screen
+                                  IconTapNavBar(
+                                    icon: AppImages.homeTab,
+                                    isSelected:
+                                        cubit.navBarEnum == NavBarEnum.home,
+                                    onTap: () {
+                                      cubit
+                                          .selectedNavBarIcons(NavBarEnum.home);
+                                    },
+                                  ),
+                                  //Categories Screen
+                                  IconTapNavBar(
+                                    icon: AppImages.categoriesTab,
+                                    isSelected: cubit.navBarEnum ==
+                                        NavBarEnum.catgeories,
+                                    onTap: () {
+                                      cubit.selectedNavBarIcons(
+                                        NavBarEnum.catgeories,
+                                      );
+                                    },
+                                  ),
+                                  //Favourites Screen
+                                  IconTapNavBar(
+                                    icon: AppImages.favouritesTab,
+                                    isSelected: cubit.navBarEnum ==
+                                        NavBarEnum.favorites,
+                                    onTap: () {
+                                      cubit.selectedNavBarIcons(
+                                        NavBarEnum.favorites,
+                                      );
+                                    },
+                                  ),
+                                  //Profile Screen
+                                  IconTapNavBar(
+                                    icon: AppImages.profileTab,
+                                    isSelected:
+                                        cubit.navBarEnum == NavBarEnum.profile,
+                                    onTap: () {
+                                      cubit.selectedNavBarIcons(
+                                        NavBarEnum.profile,
+                                      );
+                                    },
+                                  ),
+                                ],
+                              );
+                            },
                           ),
                         ),
                       ),

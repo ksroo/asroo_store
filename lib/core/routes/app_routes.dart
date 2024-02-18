@@ -6,6 +6,7 @@ import 'package:asroo_store/features/admin/home_admin/presentation/screens/home_
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart';
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/screen/main_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -43,7 +44,12 @@ class AppRoutes {
       case homeAdmin:
         return BaseRoute(page: const HomeAdminScreen());
       case mainCustomer:
-        return BaseRoute(page: const MainScreen());
+        return BaseRoute(
+          page: BlocProvider(
+            create: (context) => sl<MainCubit>(),
+            child: const MainScreen(),
+          ),
+        );
 
       default:
         return BaseRoute(page: const PageUnderBuildScreen());
