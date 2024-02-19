@@ -4,6 +4,7 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/language/lang_keys.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
+import 'package:asroo_store/features/customer/profile/presentation/widgets/build_developer.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/dark_mode_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/language_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_info.dart';
@@ -61,6 +62,12 @@ class ProfileBody extends StatelessWidget {
             const CustomFadeInRight(
               duration: 400,
               child: DarkModeChange(),
+            ),
+            SizedBox(height: 20.h),
+            // Build Developer
+            const CustomFadeInRight(
+              duration: 400,
+              child: BuildDeveloper(),
             ),
           ],
         ),
