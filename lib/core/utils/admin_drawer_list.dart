@@ -3,9 +3,6 @@
 import 'package:asroo_store/core/common/dialogs/custom_dialogs.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
-import 'package:asroo_store/core/routes/app_routes.dart';
-import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
-import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/core/utils/app_logout.dart';
