@@ -31,5 +31,8 @@
     "yes": "Yes",
     "no": "No",
     "dark_mode": "Dark Mode",
-    "lang_code": "English"
+    "lang_code": "English",
+    "notifications": "Notifications",
+    "subscribed_to_notifications": "Notifications have been subscribed",
+    "unsubscribed_to_notifications": "Notifications have been unsubscribed"
 }

@@ -7,6 +7,7 @@ import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/pro
 import 'package:asroo_store/features/customer/profile/presentation/widgets/build_developer.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/dark_mode_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/language_change.dart';
+import 'package:asroo_store/features/customer/profile/presentation/widgets/notifications_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
 import 'package:flutter/material.dart';
@@ -68,6 +69,12 @@ class ProfileBody extends StatelessWidget {
             const CustomFadeInRight(
               duration: 400,
               child: BuildDeveloper(),
+            ),
+            SizedBox(height: 20.h),
+            // Notifications change
+            const CustomFadeInRight(
+              duration: 400,
+              child: NotificationsChange(),
             ),
           ],
         ),

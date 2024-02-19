@@ -1,4 +1,7 @@
 import 'package:asroo_store/core/app/env.variables.dart';
+import 'package:asroo_store/core/common/toast/show_toast.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -26,14 +29,24 @@ class FirebaseCloudMessaging {
   /// controller for the notification if user subscribe or unsubscribed
   /// or accpeted the permission or not
 
-  Future<void> controllerForUserSubscribe() async {
+  Future<void> controllerForUserSubscribe(BuildContext context) async {
     if (isPermissionNotification == false) {
       await _permissionsNotification();
     } else {
       if (isNotificationSubscribe.value == false) {
         await _subscribeNotification();
+        if (!context.mounted) return;
+        ShowToast.showToastSuccessTop(
+          message: context.translate(LangKeys.subscribedToNotifications),
+          seconds: 2,
+        );
       } else {
         await _unSubscribeNotification();
+        if (!context.mounted) return;
+        ShowToast.showToastSuccessTop(
+          message: context.translate(LangKeys.unsubscribedToNotifications),
+          seconds: 2,
+        );
       }
     }
   }
