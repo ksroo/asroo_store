@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/customer/home/presentation/widgets/banners/banner_sliders.dart';
 import 'package:flutter/material.dart';
 
 class HomeBody extends StatelessWidget {
@@ -12,33 +13,12 @@ class HomeBody extends StatelessWidget {
       child: CustomScrollView(
         controller: scrollCOntroller,
         slivers: [
+          //Banners
+
           SliverToBoxAdapter(
-            child: Text(
-              'walid',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
+            child: BannerSliders(),
           ),
 
-          //Banners
-          SliverToBoxAdapter(
-            child: ListView.separated(
-              shrinkWrap: true,
-              physics: NeverScrollableScrollPhysics(),
-              itemBuilder: (context, index) {
-                return Container(
-                  color: Colors.red,
-                  height: 50,
-                  width: 400,
-                );
-              },
-              separatorBuilder: (context, index) {
-                return SizedBox(
-                  height: 15,
-                );
-              },
-              itemCount: 100,
-            ),
-          ),
           //Caegories
 
           //Products
