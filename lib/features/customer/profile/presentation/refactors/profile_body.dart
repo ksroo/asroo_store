@@ -1,4 +1,10 @@
+import 'package:asroo_store/core/common/animations/animate_do.dart';
+import 'package:asroo_store/core/common/widgets/text_app.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/language/lang_keys.dart';
+import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
+import 'package:asroo_store/features/customer/profile/presentation/widgets/language_change.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_info.dart';
 import 'package:asroo_store/features/customer/profile/presentation/widgets/user_profile_shimmer.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +20,7 @@ class ProfileBody extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: 15.w, vertical: 10.h),
       child: SingleChildScrollView(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //User Profile Info
             Center(
@@ -28,6 +35,25 @@ class ProfileBody extends StatelessWidget {
                   );
                 },
               ),
+            ),
+
+            //title
+            SizedBox(height: 20.h),
+            CustomFadeInRight(
+              duration: 400,
+              child: TextApp(
+                text: context.translate(LangKeys.applicationFeatures),
+                theme: context.textStyle.copyWith(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeightHelper.bold,
+                ),
+              ),
+            ),
+            SizedBox(height: 30.h),
+            // language
+            const CustomFadeInRight(
+              duration: 400,
+              child: LanguageChange(),
             ),
           ],
         ),
