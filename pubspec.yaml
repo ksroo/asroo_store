@@ -31,6 +31,7 @@ dependencies:
   flutter_svg: ^2.0.9
   flutter_animate: ^4.5.0
   webview_flutter: ^4.7.0
+  package_info_plus: ^5.0.1
 
   #Bloc
   flutter_bloc: ^8.1.3
