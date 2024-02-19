@@ -32,4 +32,8 @@ class LangKeys {
   static const String no = 'no';
   static const String darkMode = 'dark_mode';
   static const String langCode = 'lang_code';
+  static const String notifications = 'notifications';
+  static const String subscribedToNotifications = 'subscribed_to_notifications';
+  static const String unsubscribedToNotifications =
+      'unsubscribed_to_notifications';
 }

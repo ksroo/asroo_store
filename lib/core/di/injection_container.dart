@@ -34,6 +34,9 @@ import 'package:asroo_store/features/auth/data/data_source/auth_data_source.dart
 import 'package:asroo_store/features/auth/data/repos/auth_repo.dart';
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
+import 'package:asroo_store/features/customer/profile/data/data_source/profile_data_source.dart';
+import 'package:asroo_store/features/customer/profile/data/repos/profile_repo.dart';
+import 'package:asroo_store/features/customer/profile/presentation/bloc/bloc/profile_bloc.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -48,6 +51,7 @@ Future<void> setupInjector() async {
   await _initUsersAdmin();
   await _initAddNotification();
   await _initMain();
+  await _initProfile();
 }
 
 Future<void> _initCore() async {
@@ -118,4 +122,11 @@ Future<void> _initAddNotification() async {
 
 Future<void> _initMain() async {
   sl.registerFactory(MainCubit.new);
+}
+
+Future<void> _initProfile() async {
+  sl
+    ..registerFactory(() => ProfileBloc(sl()))
+    ..registerLazySingleton(() => ProfileRepo(sl()))
+    ..registerLazySingleton(() => ProfileDataSource(sl()));
 }

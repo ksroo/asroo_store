@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
+import 'package:asroo_store/core/common/screens/custom_web_view.dart';
 import 'package:asroo_store/core/common/screens/under_build_screen.dart';
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/routes/base_routes.dart';
@@ -16,6 +17,7 @@ class AppRoutes {
   static const String signUp = 'signUp';
   static const String homeAdmin = 'homeAdmin';
   static const String mainCustomer = 'main-screen';
+  static const String webview = 'webView';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -48,6 +50,12 @@ class AppRoutes {
           page: BlocProvider(
             create: (context) => sl<MainCubit>(),
             child: const MainScreen(),
+          ),
+        );
+      case webview:
+        return BaseRoute(
+          page: CustomWebView(
+            url: args! as String,
           ),
         );
 

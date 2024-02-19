@@ -8,6 +8,7 @@ import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
 import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/core/style/fonts/font_family_helper.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/core/utils/app_logout.dart';
 import 'package:asroo_store/features/admin/add_categories/presentation/screens/add_categories_screen.dart';
 import 'package:asroo_store/features/admin/add_notifications/presentation/screens/add_notifications_screen.dart';
 import 'package:asroo_store/features/admin/add_products/presentation/screens/add_products_screen.dart';
@@ -115,14 +116,7 @@ List<DrawerItemModel> adminDrawerList(BuildContext context) {
             textButton2: 'No',
             isLoading: false,
             onPressed: () async {
-              final navigator = Navigator.of(context);
-              await SharedPref().removePreference(PrefKeys.accessToken);
-              await SharedPref().removePreference(PrefKeys.userId);
-              await SharedPref().removePreference(PrefKeys.userRole);
-              await navigator.pushNamedAndRemoveUntil(
-                AppRoutes.login,
-                (route) => false,
-              );
+              await AppLogout().logout();
             },
           );
         },
