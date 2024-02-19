@@ -13,7 +13,7 @@ class AppInfo {
       buildNumberText = '${packgeInfo.version} (${packgeInfo.buildNumber})';
     } else {
       final packgeInfo = await PackageInfo.fromPlatform();
-      buildNumberText = '${packgeInfo.buildNumber} (${packgeInfo.version})';
+      buildNumberText = '(${packgeInfo.buildNumber}) ${packgeInfo.version}';
     }
 
     return buildNumberText;
