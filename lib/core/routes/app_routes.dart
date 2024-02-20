@@ -9,6 +9,7 @@ import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/screen/main_screen.dart';
+import 'package:asroo_store/features/customer/product_details/presentation/screen/product_details_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +19,7 @@ class AppRoutes {
   static const String homeAdmin = 'homeAdmin';
   static const String mainCustomer = 'main-screen';
   static const String webview = 'webView';
+  static const String productDetails = 'product-details';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -56,6 +58,12 @@ class AppRoutes {
         return BaseRoute(
           page: CustomWebView(
             url: args! as String,
+          ),
+        );
+      case productDetails:
+        return BaseRoute(
+          page: ProductDetailsScreen(
+            productId: args! as int,
           ),
         );
 
