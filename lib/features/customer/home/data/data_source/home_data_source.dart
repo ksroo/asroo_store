@@ -1,4 +1,3 @@
-import 'package:asroo_store/core/service/graphql/api_result.dart';
 import 'package:asroo_store/core/service/graphql/api_service.dart';
 import 'package:asroo_store/core/service/graphql/qraphql_queries/admin/categories_queries.dart';
 import 'package:asroo_store/core/service/graphql/qraphql_queries/customer/home_queries.dart';
