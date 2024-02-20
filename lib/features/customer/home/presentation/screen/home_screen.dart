@@ -1,7 +1,10 @@
 import 'package:asroo_store/core/common/animations/animate_do.dart';
+import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/refactors/home_body.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -30,32 +33,42 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        //body
-        HomeBody(
-          scrollCOntroller: scrollCOntroller,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => sl<GetBannersBloc>()
+            ..add(
+              const GetBannersEvent.getBanners(),
+            ),
         ),
+      ],
+      child: Stack(
+        children: [
+          //body
+          HomeBody(
+            scrollCOntroller: scrollCOntroller,
+          ),
 
-        CustomFadeInLeft(
-          duration: 200,
-          child: Align(
-            alignment: Alignment.bottomRight,
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 10.w),
-              child: FloatingActionButton(
-                onPressed: scrollUp,
-                backgroundColor: context.color.bluePinkLight,
-                child: const Icon(
-                  Icons.arrow_upward,
-                  color: Colors.white,
-                  size: 30,
+          CustomFadeInLeft(
+            duration: 200,
+            child: Align(
+              alignment: Alignment.bottomRight,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 10.w),
+                child: FloatingActionButton(
+                  onPressed: scrollUp,
+                  backgroundColor: context.color.bluePinkLight,
+                  child: const Icon(
+                    Icons.arrow_upward,
+                    color: Colors.white,
+                    size: 30,
+                  ),
                 ),
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
