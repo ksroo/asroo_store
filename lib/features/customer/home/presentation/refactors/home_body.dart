@@ -1,4 +1,6 @@
+import 'package:asroo_store/core/common/loading/empty_screen.dart';
 import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
+import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/banners/banner_sliders.dart';
 import 'package:asroo_store/features/customer/home/presentation/widgets/categories/categories_list.dart';
@@ -17,6 +19,9 @@ class HomeBody extends StatelessWidget {
     return RefreshIndicator(
       onRefresh: () async {
         context.read<GetBannersBloc>().add(const GetBannersEvent.getBanners());
+        context
+            .read<GetAllCategoriesBloc>()
+            .add(const GetAllCategoriesEvent.getCategories());
       },
       child: CustomScrollView(
         controller: scrollCOntroller,
@@ -53,9 +58,25 @@ class HomeBody extends StatelessWidget {
           ),
 
           //Caegories
-
           SliverToBoxAdapter(
-            child: CategoriesShimmer(),
+            child: BlocBuilder<GetAllCategoriesBloc, GetAllCategoriesState>(
+              builder: (context, state) {
+                return state.when(
+                  loading: () {
+                    return const CategoriesShimmer();
+                  },
+                  success: (categoreisList) {
+                    return CategoriesList(
+                      categoreisList: categoreisList,
+                    );
+                  },
+                  empty: () {
+                    return const EmptyScreen();
+                  },
+                  error: Text.new,
+                );
+              },
+            ),
           ),
 
           //Products
