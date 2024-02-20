@@ -1,4 +1,6 @@
 import 'package:asroo_store/core/common/widgets/custom_container_linear_customer.dart';
+import 'package:asroo_store/core/common/widgets/custom_favorite_button.dart';
+import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_exetension.dart';
@@ -37,27 +39,13 @@ class CustomProductItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Buttons
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Share Button
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.share,
-                    color: context.color.textColor,
-                  ),
-                ),
+                CustomShareButton(size: 25),
                 //Favorite Button
-                IconButton(
-                  onPressed: () {},
-                  padding: EdgeInsets.zero,
-                  icon: Icon(
-                    Icons.favorite_outline,
-                    color: context.color.textColor,
-                  ),
-                ),
+                CustomFavoriteButton(size: 25),
               ],
             ),
             // Show Image

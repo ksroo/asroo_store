@@ -2,6 +2,7 @@ import 'package:asroo_store/core/common/widgets/customer_app_bar.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/refactors/add_to_cart_button.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/refactors/product_deatils_custom_painter.dart';
+import 'package:asroo_store/features/customer/product_details/presentation/refactors/product_details_body.dart';
 import 'package:flutter/material.dart';
 
 class ProductDetailsScreen extends StatelessWidget {
@@ -32,6 +33,7 @@ class ProductDetailsScreen extends StatelessWidget {
               ),
             ),
           ),
+          ProductDetailsBody(),
         ],
       ),
     );
