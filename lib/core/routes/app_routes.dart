@@ -7,6 +7,7 @@ import 'package:asroo_store/features/admin/home_admin/presentation/screens/home_
 import 'package:asroo_store/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:asroo_store/features/auth/presentation/screens/login_screen.dart';
 import 'package:asroo_store/features/auth/presentation/screens/sign_up_screen.dart';
+import 'package:asroo_store/features/customer/category/persentation/screen/category_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/screen/main_screen.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/screen/product_details_screen.dart';
@@ -20,6 +21,7 @@ class AppRoutes {
   static const String mainCustomer = 'main-screen';
   static const String webview = 'webView';
   static const String productDetails = 'product-details';
+  static const String category = 'catgeory';
 
   static Route<void> onGenerateRoute(RouteSettings settings) {
     final args = settings.arguments;
@@ -64,6 +66,12 @@ class AppRoutes {
         return BaseRoute(
           page: ProductDetailsScreen(
             productId: args! as int,
+          ),
+        );
+      case category:
+        return BaseRoute(
+          page: CatgeoryScreen(
+            categoryInfo: args! as ({int categoryId, String categoryName}),
           ),
         );
 
