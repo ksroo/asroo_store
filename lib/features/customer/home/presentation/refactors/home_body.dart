@@ -3,6 +3,7 @@ import 'package:asroo_store/core/common/loading/loading_shimmer.dart';
 import 'package:asroo_store/core/common/widgets/custom_button.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/language/lang_keys.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_categories/get_all_categories_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_all_products/get_all_products_bloc.dart';
 import 'package:asroo_store/features/customer/home/presentation/bloc/get_banners/get_banners_bloc.dart';
@@ -130,7 +131,9 @@ class HomeBody extends StatelessWidget {
                       backgroundColor: context.color.bluePinkLight,
                       textColor: Colors.black,
                       text: context.translate(LangKeys.viewAll),
-                      onPressed: () {},
+                      onPressed: () {
+                        context.pushName(AppRoutes.productsViewAll);
+                      },
                     ),
                   );
                 }

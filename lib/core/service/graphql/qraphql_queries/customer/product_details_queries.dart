@@ -15,7 +15,7 @@ class ProductDetailsQueries {
             title
             price
             images
-                description
+            description
           }
         },
   
