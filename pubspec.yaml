@@ -61,6 +61,10 @@ dependencies:
   hive: ^2.2.3
   hive_flutter: ^1.1.0
 
+  #Patination
+  equatable: ^2.0.5
+  bloc_concurrency: ^0.2.4
+
 
 
 dev_dependencies:
