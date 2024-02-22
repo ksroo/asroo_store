@@ -1,1 +1,1 @@
-enum FilterButtonsEnum { name, price, non }
+enum FilterButtonsEnum { name, price, saved, non }

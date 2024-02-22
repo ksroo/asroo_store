@@ -91,6 +91,9 @@ class _FilterButtonsState extends State<FilterButtons> {
                           ),
                         ),
                       );
+                  setState(() {
+                    searchEnum = FilterButtonsEnum.saved;
+                  });
                 }
               },
             ),
@@ -150,6 +153,9 @@ class _FilterButtonsState extends State<FilterButtons> {
                           ),
                         ),
                       );
+                  setState(() {
+                    searchEnum = FilterButtonsEnum.saved;
+                  });
                 }
               },
             ),
@@ -167,17 +173,7 @@ class _FilterButtonsState extends State<FilterButtons> {
   void nameSearchTap() {
     if (searchEnum == FilterButtonsEnum.name) {
       setState(() {
-        searchEnum = FilterButtonsEnum.non;
-        //call api for search name
-        context.read<SearchBloc>().add(
-              SearchEvent.searchFroProduct(
-                body: SearchRequestBody(
-                  searchName: nameController.text.trim(),
-                  priceMin: null,
-                  priceMax: null,
-                ),
-              ),
-            );
+        searchEnum = FilterButtonsEnum.saved;
       });
     } else {
       setState(() {
@@ -190,7 +186,7 @@ class _FilterButtonsState extends State<FilterButtons> {
   void priceSearchTap() {
     if (searchEnum == FilterButtonsEnum.price) {
       setState(() {
-        searchEnum = FilterButtonsEnum.non;
+        searchEnum = FilterButtonsEnum.saved;
       });
     } else {
       setState(() {

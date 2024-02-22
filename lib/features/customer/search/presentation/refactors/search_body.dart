@@ -26,8 +26,12 @@ class SearchBody extends StatelessWidget {
                   return const SizedBox.shrink();
                 },
                 loading: () {
-                  return CircularProgressIndicator(
-                    color: context.color.textColor,
+                  return Expanded(
+                    child: Center(
+                      child: CircularProgressIndicator(
+                        color: context.color.textColor,
+                      ),
+                    ),
                   );
                 },
                 success: (productList) {

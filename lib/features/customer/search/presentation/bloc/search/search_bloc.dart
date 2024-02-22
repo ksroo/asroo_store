@@ -11,7 +11,7 @@ part 'search_state.dart';
 part 'search_bloc.freezed.dart';
 
 class SearchBloc extends Bloc<SearchEvent, SearchState> {
-  SearchBloc(this._repo) : super(const SearchState.loading()) {
+  SearchBloc(this._repo) : super(const SearchState.initial()) {
     on<SearchForProductEvent>(_searchFroProduct);
   }
 

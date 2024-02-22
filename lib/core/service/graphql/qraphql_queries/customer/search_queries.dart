@@ -11,22 +11,26 @@ class SearchQueries {
   //Product Details
   Map<String, dynamic> searchProduct({required SearchRequestBody body}) {
     return {
-      'query': '''
-           {
-          products(price_min: ${body.priceMin}, price_max:${body.priceMax} , title: ${body.searchName}) {
+      'query': r'''
+        query SearchProducts($searchName: String , $priceMax: Int , $priceMin: Int){
+             products(title: $searchName, price_max: $priceMax, price_min:$priceMin){
             id
-              title
-              price
-              images
-              description
-              category{
-                id
+            title
+            images
+            description
+            price
+            category{
                 name
-                }
+                id
+            }
           }
-        },
-  
-      ''',
+        }        
+        ''',
+      'variables': {
+        'searchName': body.searchName,
+        'priceMax': body.priceMax,
+        'priceMin': body.priceMin,
+      },
     };
   }
 }

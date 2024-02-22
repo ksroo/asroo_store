@@ -344,7 +344,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -353,7 +353,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -362,7 +362,7 @@ mixin _$SearchState {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
@@ -408,7 +408,7 @@ class __$$InitialImplCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$InitialImpl implements _Initial {
+class _$InitialImpl implements Initial {
   const _$InitialImpl();
 
   @override
@@ -468,7 +468,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -480,7 +480,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -492,7 +492,7 @@ class _$InitialImpl implements _Initial {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
@@ -506,8 +506,8 @@ class _$InitialImpl implements _Initial {
   }
 }
 
-abstract class _Initial implements SearchState {
-  const factory _Initial() = _$InitialImpl;
+abstract class Initial implements SearchState {
+  const factory Initial() = _$InitialImpl;
 }
 
 /// @nodoc
@@ -588,7 +588,7 @@ class _$LoadinStateImpl implements LoadinState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -600,7 +600,7 @@ class _$LoadinStateImpl implements LoadinState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -612,7 +612,7 @@ class _$LoadinStateImpl implements LoadinState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
@@ -743,7 +743,7 @@ class _$SuccessStateImpl implements SuccessState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -755,7 +755,7 @@ class _$SuccessStateImpl implements SuccessState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -767,7 +767,7 @@ class _$SuccessStateImpl implements SuccessState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
@@ -870,7 +870,7 @@ class _$EmptyStateImpl implements EmptyState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -882,7 +882,7 @@ class _$EmptyStateImpl implements EmptyState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -894,7 +894,7 @@ class _$EmptyStateImpl implements EmptyState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
@@ -1016,7 +1016,7 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(_Initial value) initial,
+    required TResult Function(Initial value) initial,
     required TResult Function(LoadinState value) loading,
     required TResult Function(SuccessState value) success,
     required TResult Function(EmptyState value) empty,
@@ -1028,7 +1028,7 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
-    TResult? Function(_Initial value)? initial,
+    TResult? Function(Initial value)? initial,
     TResult? Function(LoadinState value)? loading,
     TResult? Function(SuccessState value)? success,
     TResult? Function(EmptyState value)? empty,
@@ -1040,7 +1040,7 @@ class _$ErrorStateImpl implements ErrorState {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Initial value)? initial,
+    TResult Function(Initial value)? initial,
     TResult Function(LoadinState value)? loading,
     TResult Function(SuccessState value)? success,
     TResult Function(EmptyState value)? empty,
