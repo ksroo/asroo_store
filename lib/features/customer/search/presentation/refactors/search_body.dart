@@ -13,6 +13,7 @@ class SearchBody extends StatelessWidget {
         children: [
           // filter buttons
           FilterButtons(),
+          
         ],
       ),
     );
