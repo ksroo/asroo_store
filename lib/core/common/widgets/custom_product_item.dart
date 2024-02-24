@@ -6,8 +6,10 @@ import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/extensions/string_exetension.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomProductItem extends StatelessWidget {
@@ -39,13 +41,31 @@ class CustomProductItem extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             //Buttons
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Share Button
-                CustomShareButton(size: 25),
+                const CustomShareButton(size: 25),
                 //Favorite Button
-                CustomFavoriteButton(size: 25),
+                BlocBuilder<FavoritesCubit, FavoritesState>(
+                  builder: (context, state) {
+                    return CustomFavoriteButton(
+                      size: 25,
+                      isFavorites: context
+                          .read<FavoritesCubit>()
+                          .isFavorites(productId.toString()),
+                      onTap: () async {
+                        await context.read<FavoritesCubit>().manageFavourites(
+                              productId: productId.toString(),
+                              title: title,
+                              image: imageUrl,
+                              price: price.toString(),
+                              categoryName: categoryName,
+                            );
+                      },
+                    );
+                  },
+                ),
               ],
             ),
             // Show Image
