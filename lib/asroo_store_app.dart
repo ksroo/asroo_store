@@ -8,6 +8,7 @@ import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/service/shared_pref/pref_keys.dart';
 import 'package:asroo_store/core/service/shared_pref/shared_pref.dart';
 import 'package:asroo_store/core/style/theme/app_theme.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -21,12 +22,19 @@ class AsrooStoreApp extends StatelessWidget {
       valueListenable: ConnectivityController.instance.isConnected,
       builder: (_, value, __) {
         if (value) {
-          return BlocProvider(
-            create: (context) => sl<AppCubit>()
-              ..changeAppThemeMode(
-                sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
-              )
-              ..getSavedLanguage(),
+          return MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => sl<FavoritesCubit>(),
+              ),
+              BlocProvider(
+                create: (context) => sl<AppCubit>()
+                  ..changeAppThemeMode(
+                    sharedMode: SharedPref().getBoolean(PrefKeys.themeMode),
+                  )
+                  ..getSavedLanguage(),
+              ),
+            ],
             child: ScreenUtilInit(
               designSize: const Size(375, 812),
               minTextAdapt: true,
