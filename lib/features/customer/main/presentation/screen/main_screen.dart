@@ -2,7 +2,7 @@ import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/enums/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/features/customer/categories/categories_screen.dart';
-import 'package:asroo_store/features/customer/favorites/favorites_screen.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
 import 'package:asroo_store/features/customer/main/presentation/refactors/bottom_nav_bar.dart';
