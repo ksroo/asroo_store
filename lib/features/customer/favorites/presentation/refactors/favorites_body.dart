@@ -1,6 +1,7 @@
 import 'package:asroo_store/core/common/widgets/custom_product_item.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -17,11 +18,19 @@ class FavorietsBody extends StatelessWidget {
         builder: (context, state) {
           if (context.read<FavoritesCubit>().favoritesLis.isEmpty) {
             return Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Icon(
-                  Icons.favorite,
+                  Icons.favorite_outline,
                   color: context.color.textColor,
-                  size: 50,
+                  size: 150,
+                ),
+                TextApp(
+                  text: 'Choose Your Favorite Products',
+                  theme: context.textStyle.copyWith(
+                    fontWeight: FontWeightHelper.bold,
+                    fontSize: 16.sp,
+                  ),
                 ),
               ],
             );
