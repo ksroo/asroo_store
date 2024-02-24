@@ -56,7 +56,6 @@ class FavorietsBody extends StatelessWidget {
               );
             },
           );
-          ;
         },
       ),
     );
