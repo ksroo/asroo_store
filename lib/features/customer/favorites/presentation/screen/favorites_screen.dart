@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/customer/favorites/presentation/refactors/favorites_body.dart';
 import 'package:flutter/material.dart';
 
 class FavoritesScreen extends StatelessWidget {
@@ -5,11 +6,6 @@ class FavoritesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Text(
-        'Favorites Screen',
-        style: TextStyle(color: Colors.white, fontSize: 20),
-      ),
-    );
+    return const FavorietsBody();
   }
 }

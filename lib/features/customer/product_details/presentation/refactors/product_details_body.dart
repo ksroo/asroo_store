@@ -3,9 +3,11 @@ import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
 import 'package:asroo_store/core/common/widgets/text_app.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/style/fonts/font_weight_helper.dart';
+import 'package:asroo_store/features/customer/favorites/presentation/cubit/favorites_cubit.dart';
 import 'package:asroo_store/features/customer/product_details/data/models/product_details_reponse.dart';
 import 'package:asroo_store/features/customer/product_details/presentation/widgets/product_details_image_slider.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetailsBody extends StatelessWidget {
@@ -22,13 +24,31 @@ class ProductDetailsBody extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // share and favorite button
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Share Button
-                CustomShareButton(size: 30),
+                const CustomShareButton(size: 30),
                 //Favorite Button
-                CustomFavoriteButton(size: 30),
+                BlocBuilder<FavoritesCubit, FavoritesState>(
+                  builder: (context, state) {
+                    return CustomFavoriteButton(
+                      size: 30,
+                      isFavorites: context
+                          .read<FavoritesCubit>()
+                          .isFavorites(productModel.id ?? ''),
+                      onTap: () async {
+                        await context.read<FavoritesCubit>().manageFavourites(
+                              productId: productModel.id ?? '',
+                              title: productModel.title ?? '',
+                              image: productModel.images.first,
+                              price: productModel.price.toString(),
+                              categoryName: productModel.category!.name,
+                            );
+                      },
+                    );
+                  },
+                ),
               ],
             ),
             SizedBox(height: 10.h),
