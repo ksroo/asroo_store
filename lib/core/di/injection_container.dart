@@ -1,4 +1,5 @@
 import 'package:asroo_store/core/app/app_cubit/app_cubit.dart';
+import 'package:asroo_store/core/app/share/share_cubit.dart';
 import 'package:asroo_store/core/app/upload_image/cubit/upload_image_cubit.dart';
 import 'package:asroo_store/core/app/upload_image/data_source/upload_image_data_source.dart';
 import 'package:asroo_store/core/app/upload_image/repo/upload_image_repo.dart';
@@ -87,6 +88,7 @@ Future<void> _initCore() async {
     ..registerLazySingleton<ApiService>(() => ApiService(dio))
     ..registerSingleton<GlobalKey<NavigatorState>>(navigatorKey)
     ..registerFactory(() => UploadImageCubit(sl()))
+    ..registerFactory(ShareCubit.new)
     ..registerLazySingleton(() => UploadImageRepo(sl()))
     ..registerLazySingleton(() => UploadImageDataSource(sl()));
 }
