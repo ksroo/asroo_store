@@ -1,3 +1,4 @@
+import 'package:asroo_store/core/app/share/share_cubit.dart';
 import 'package:asroo_store/core/common/widgets/custom_container_linear_customer.dart';
 import 'package:asroo_store/core/common/widgets/custom_favorite_button.dart';
 import 'package:asroo_store/core/common/widgets/custom_share_button.dart';
@@ -45,7 +46,54 @@ class CustomProductItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 //Share Button
-                const CustomShareButton(size: 25),
+                BlocBuilder<ShareCubit, ShareState>(
+                  builder: (context, state) {
+                    return state.when(
+                      initial: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                      loading: (id) {
+                        if (id == productId) {
+                          return Padding(
+                            padding: EdgeInsets.only(left: 10.w),
+                            child: SizedBox(
+                              height: 25.h,
+                              width: 25.w,
+                              child: CircularProgressIndicator(
+                                color: context.color.bluePinkLight,
+                              ),
+                            ),
+                          );
+                        }
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {},
+                        );
+                      },
+                      success: () {
+                        return CustomShareButton(
+                          size: 25,
+                          onTap: () {
+                            context.read<ShareCubit>().sendDynamicLinkProduct(
+                                  imageUrl: imageUrl,
+                                  productId: productId,
+                                  title: title,
+                                );
+                          },
+                        );
+                      },
+                    );
+                  },
+                ),
                 //Favorite Button
                 BlocBuilder<FavoritesCubit, FavoritesState>(
                   builder: (context, state) {
