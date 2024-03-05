@@ -66,6 +66,7 @@ dependencies:
   equatable: ^2.0.5
   bloc_concurrency: ^0.2.4
   firebase_dynamic_links: ^5.4.15
+  flutter_local_notifications: ^16.3.3
 
 
 
