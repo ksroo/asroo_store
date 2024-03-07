@@ -1,6 +1,8 @@
 import 'package:asroo_store/core/di/injection_container.dart';
 import 'package:asroo_store/core/enums/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
+import 'package:asroo_store/core/service/push_notification/local_notfication_service.dart';
 import 'package:asroo_store/features/customer/categories/categories_screen.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
@@ -11,8 +13,29 @@ import 'package:asroo_store/features/customer/profile/presentation/screen/profil
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MainScreen extends StatelessWidget {
+class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
+
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
+  @override
+  void initState() {
+    super.initState();
+    listenToNotifications();
+  }
+
+  void listenToNotifications() {
+    LocalNotificationService.streamController.stream.listen((event) {
+      if (int.parse(event.payload.toString()) == -1) return;
+      context.pushName(
+        AppRoutes.productDetails,
+        arguments: int.parse(event.payload.toString()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -2,6 +2,7 @@ import 'package:asroo_store/core/app/env.variables.dart';
 import 'package:asroo_store/core/common/toast/show_toast.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/language/lang_keys.dart';
+import 'package:asroo_store/core/service/push_notification/firebase_messaging_navigate.dart';
 import 'package:dio/dio.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -24,6 +25,19 @@ class FirebaseCloudMessaging {
   Future<void> init() async {
     //permission
     await _permissionsNotification();
+
+    // forground
+    FirebaseMessaging.onMessage
+        .listen(FirebaseMessagingNavigate.forGroundHandler);
+
+    // terminated
+    await FirebaseMessaging.instance
+        .getInitialMessage()
+        .then(FirebaseMessagingNavigate.terminatedHandler);
+
+    // background
+    FirebaseMessaging.onMessageOpenedApp
+        .listen(FirebaseMessagingNavigate.backGroundHandler);
   }
 
   /// controller for the notification if user subscribe or unsubscribed
