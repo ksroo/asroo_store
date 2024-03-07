@@ -32,20 +32,22 @@ void main() async {
             messagingSenderId: '123783791346',
             projectId: 'asroostore',
           ),
-        )
-      : await Firebase.initializeApp();
+        ).whenComplete(() {
+          FirebaseCloudMessaging().init();
+          LocalNotificationService.init();
+        })
+      : await Firebase.initializeApp().whenComplete(() {
+          FirebaseCloudMessaging().init();
+          LocalNotificationService.init();
+        });
 
   await SharedPref().instantiatePreferences();
 
   await setupInjector();
 
-  await FirebaseCloudMessaging().init();
-
   await HiveDatabase().setup();
 
   await DynamicLink().initDynamicLink();
-
-  await LocalNotificationService.init();
 
   Bloc.observer = AppBlocObserver();
 
