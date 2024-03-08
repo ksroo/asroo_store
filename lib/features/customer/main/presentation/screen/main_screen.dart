@@ -57,7 +57,7 @@ class _MainScreenState extends State<MainScreen> {
                 child: BlocBuilder<MainCubit, MainState>(
                   builder: (context, state) {
                     final cubit = context.read<MainCubit>();
-                    if (cubit.navBarEnum == NavBarEnum.catgeories) {
+                    if (cubit.navBarEnum == NavBarEnum.notifications) {
                       return const NotificationScreen();
                     } else if (cubit.navBarEnum == NavBarEnum.favorites) {
                       return const FavoritesScreen();
