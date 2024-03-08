@@ -3,7 +3,7 @@ import 'package:asroo_store/core/enums/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/service/push_notification/local_notfication_service.dart';
-import 'package:asroo_store/features/customer/categories/categories_screen.dart';
+import 'package:asroo_store/features/customer/notifications/persentation/screens/notification_screen.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
@@ -29,11 +29,12 @@ class _MainScreenState extends State<MainScreen> {
 
   void listenToNotifications() {
     LocalNotificationService.streamController.stream.listen((event) {
-      if (int.parse(event.payload.toString()) == -1) return;
-      context.pushName(
-        AppRoutes.productDetails,
-        arguments: int.parse(event.payload.toString()),
-      );
+      if (int.parse(event.payload.toString()) != -1) {
+        context.pushName(
+          AppRoutes.productDetails,
+          arguments: int.parse(event.payload.toString()),
+        );
+      }
     });
   }
 
@@ -57,8 +58,8 @@ class _MainScreenState extends State<MainScreen> {
                 child: BlocBuilder<MainCubit, MainState>(
                   builder: (context, state) {
                     final cubit = context.read<MainCubit>();
-                    if (cubit.navBarEnum == NavBarEnum.catgeories) {
-                      return const CatgeoriesScreen();
+                    if (cubit.navBarEnum == NavBarEnum.notifications) {
+                      return const NotificationScreen();
                     } else if (cubit.navBarEnum == NavBarEnum.favorites) {
                       return const FavoritesScreen();
                     } else if (cubit.navBarEnum == NavBarEnum.profile) {
