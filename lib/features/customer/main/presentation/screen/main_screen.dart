@@ -29,11 +29,12 @@ class _MainScreenState extends State<MainScreen> {
 
   void listenToNotifications() {
     LocalNotificationService.streamController.stream.listen((event) {
-      if (int.parse(event.payload.toString()) == -1) return;
-      context.pushName(
-        AppRoutes.productDetails,
-        arguments: int.parse(event.payload.toString()),
-      );
+      if (int.parse(event.payload.toString()) != -1) {
+        context.pushName(
+          AppRoutes.productDetails,
+          arguments: int.parse(event.payload.toString()),
+        );
+      }
     });
   }
 
