@@ -13,30 +13,8 @@ import 'package:asroo_store/features/customer/profile/presentation/screen/profil
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-class MainScreen extends StatefulWidget {
+class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-class _MainScreenState extends State<MainScreen> {
-  @override
-  void initState() {
-    super.initState();
-    listenToNotifications();
-  }
-
-  void listenToNotifications() {
-    LocalNotificationService.streamController.stream.listen((event) {
-      if (int.parse(event.payload.toString()) != -1) {
-        context.pushName(
-          AppRoutes.productDetails,
-          arguments: int.parse(event.payload.toString()),
-        );
-      }
-    });
-  }
 
   @override
   Widget build(BuildContext context) {

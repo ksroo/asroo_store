@@ -1,5 +1,9 @@
 import 'dart:async';
 
+import 'package:asroo_store/core/di/injection_container.dart';
+import 'package:asroo_store/core/extensions/context_extension.dart';
+import 'package:asroo_store/core/routes/app_routes.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class LocalNotificationService {
@@ -20,12 +24,14 @@ class LocalNotificationService {
     );
   }
 
-  static StreamController<NotificationResponse> streamController =
-      StreamController();
-
   static void onTap(NotificationResponse notificationResponse) {
     // navigator
-    streamController.add(notificationResponse);
+    if (int.parse(notificationResponse.payload.toString()) != -1) {
+      sl<GlobalKey<NavigatorState>>().currentState!.context.pushName(
+            AppRoutes.productDetails,
+            arguments: int.parse(notificationResponse.payload.toString()),
+          );
+    }
   }
 
   static Future<void> showSimpleNotification({
