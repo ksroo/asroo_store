@@ -3,7 +3,7 @@ import 'package:asroo_store/core/enums/nav_bar_enum.dart';
 import 'package:asroo_store/core/extensions/context_extension.dart';
 import 'package:asroo_store/core/routes/app_routes.dart';
 import 'package:asroo_store/core/service/push_notification/local_notfication_service.dart';
-import 'package:asroo_store/features/customer/categories/categories_screen.dart';
+import 'package:asroo_store/features/customer/notifications/persentation/screens/notification_screen.dart';
 import 'package:asroo_store/features/customer/favorites/presentation/screen/favorites_screen.dart';
 import 'package:asroo_store/features/customer/home/presentation/screen/home_screen.dart';
 import 'package:asroo_store/features/customer/main/presentation/cubit/main_cubit.dart';
@@ -58,7 +58,7 @@ class _MainScreenState extends State<MainScreen> {
                   builder: (context, state) {
                     final cubit = context.read<MainCubit>();
                     if (cubit.navBarEnum == NavBarEnum.catgeories) {
-                      return const CatgeoriesScreen();
+                      return const NotificationScreen();
                     } else if (cubit.navBarEnum == NavBarEnum.favorites) {
                       return const FavoritesScreen();
                     } else if (cubit.navBarEnum == NavBarEnum.profile) {
