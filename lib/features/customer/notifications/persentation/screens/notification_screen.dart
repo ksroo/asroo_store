@@ -1,3 +1,4 @@
+import 'package:asroo_store/features/customer/notifications/persentation/refactors/notification_body.dart';
 import 'package:flutter/material.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -5,11 +6,6 @@ class NotificationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text(
-        'Categories Screen',
-        style: TextStyle(color: Colors.white, fontSize: 20),
-      ),
-    );
+    return const NotificationBody();
   }
 }
